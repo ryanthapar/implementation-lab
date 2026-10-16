@@ -132,15 +132,67 @@
   .fine { font-size: .8rem; color: var(--muted); margin: 10px 0 0; text-align: center; }
   #thanks { display: none; text-align: center; font-weight: 700; }
 
+  /* hero facts */
+  .facts { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; margin: 26px 0 0; padding: 0; font-weight: 700; font-size: .95rem; }
+  .facts li::before { content: "✓ "; color: var(--yellow); }
+
+  /* placeholders: remove the .ph class once real content is in */
+  .ph { outline: 2px dashed var(--orange); outline-offset: 3px; }
+  .ph-note { display: inline-block; background: #fff3e0; color: #8a4b00; font-size: .75rem; font-weight: 800; padding: 2px 8px; border-radius: 6px; margin-bottom: 8px; }
+
+  /* meet monica */
+  .about { display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: center; }
+  .photo { aspect-ratio: 4/5; border-radius: var(--radius); background: linear-gradient(160deg, #e9defa, #cdb8f2); display: grid; place-items: center; text-align: center; color: var(--purple); font-weight: 800; padding: 20px; }
+  .about h2 { margin-bottom: 6px; }
+  .about .role { color: var(--purple); font-weight: 800; margin: 0 0 14px; }
+  .creds { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .creds li { background: #f2ecfd; color: var(--purple-dark); font-weight: 700; font-size: .85rem; padding: 6px 12px; border-radius: 999px; }
+
+  /* stats */
+  .stats { background: var(--purple); color: #fff; padding: 36px 0; }
+  .stats .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; text-align: center; }
+  .stat b { display: block; font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--yellow); line-height: 1.1; }
+  .stat span { font-size: .9rem; opacity: .9; }
+  .stats.in-form { background: none; padding: 0; margin-top: 8px; }
+  .stats.in-form .wrap { padding: 0; grid-template-columns: repeat(2, 1fr); text-align: left; }
+
+  /* testimonials */
+  .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .quote { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin: 0; }
+  .quote p { margin: 0 0 14px; font-size: 1.02rem; }
+  .quote footer { background: none; color: var(--muted); padding: 0; text-align: left; font-size: .88rem; font-weight: 700; }
+
+  /* what you get */
+  .get { list-style: none; padding: 0; margin: 36px auto 0; max-width: 760px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 28px; }
+  .get li { padding-left: 28px; position: relative; font-weight: 600; }
+  .get li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 900; }
+  .get-title { text-align: center; margin: 44px 0 0; font-size: 1.3rem; }
+
+  /* topic collapse */
+  .topic.collapsed li:nth-child(n+7) { display: none; }
+  .more { margin: 0 18px 18px; background: none; border: 0; color: var(--c); font: inherit; font-weight: 800; cursor: pointer; padding: 0; text-decoration: underline; }
+
+  /* faq */
+  .faq { max-width: 780px; margin: 0 auto; }
+  .faq details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 10px; padding: 0 20px; }
+  .faq summary { cursor: pointer; font-weight: 800; padding: 16px 0; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--purple); font-size: 1.4rem; line-height: 1; }
+  .faq details[open] summary::after { content: "–"; }
+  .faq details p { margin: 0 0 16px; color: var(--muted); }
+
   footer { background: #140a2e; color: #bdb2da; text-align: center; padding: 36px 20px; font-size: .9rem; }
   footer .tagline { color: #fff; font-size: 1.3rem; font-style: italic; font-weight: 700; margin-bottom: 8px; }
 
   @media (max-width: 960px) {
     .grid, .steps { grid-template-columns: repeat(2, 1fr); }
-    .sched, .reg-box { grid-template-columns: 1fr; }
+    .sched, .reg-box, .quotes { grid-template-columns: 1fr; }
+    .about { grid-template-columns: 1fr; }
+    .photo { max-width: 260px; aspect-ratio: 1; }
+    .stats .wrap { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 520px) {
-    .grid, .steps { grid-template-columns: 1fr; }
+    .grid, .steps, .get { grid-template-columns: 1fr; }
     section { padding: 48px 0; }
     .hero { padding: 52px 0 60px; }
   }
@@ -164,10 +216,41 @@
       <a class="btn btn-ghost" href="#topics">See what we cover</a>
     </div>
     <p class="price-pill"><b>$99/month</b> · two in-person + two Zoom sessions every month</p>
+    <ul class="facts">
+      <li>Wednesdays in person &amp; Fridays on Zoom</li>
+      <li>No payment required to register</li>
+      <li>No obligation</li>
+      <li>Open to all Right at Home agents</li>
+    </ul>
   </div>
 </header>
 
 <div class="banner">Information is not the problem. <span>Implementation is.</span></div>
+
+<section id="coach">
+  <div class="wrap about">
+    <div class="photo ph"><span>[PLACEHOLDER]<br>Photo of Monica</span></div>
+    <div>
+      <span class="ph-note">PLACEHOLDER: replace with Monica's real bio and credentials</span>
+      <h2>Meet your coach, Monica Thapar</h2>
+      <p class="role">Realtor® · Right at Home Realty · Host of "Let's Farm"</p>
+      <p>[Short bio: how long Monica has been in real estate, the kind of business she has built, and why she created the Implementation Lab. Two or three sentences, in her own voice.]</p>
+      <p>[One line on her approach: scripts, role-play and one skill at a time, so agents leave each session with something they can use that week.]</p>
+      <ul class="creds ph">
+        <li>[X years in real estate]</li><li>[X deals closed]</li><li>[Award or designation]</li><li>[Team or brokerage role]</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="stats ph">
+  <div class="wrap">
+    <div class="stat"><b>[00]</b><span>agents coached</span></div>
+    <div class="stat"><b>[00]</b><span>deals closed</span></div>
+    <div class="stat"><b>[00]</b><span>years in real estate</span></div>
+    <div class="stat"><b>[00]</b><span>sessions run</span></div>
+  </div>
+</div>
 
 <section id="how">
   <div class="wrap center">
@@ -185,7 +268,7 @@
 <section id="topics" class="topics-bg">
   <div class="wrap">
     <h2 class="center">What we cover</h2>
-    <p class="lead center">Eight core areas, from prospecting to specialty markets. Topics are tackled one skill at a time.</p>
+    <p class="lead center">Eight core areas, from prospecting to specialty markets. You will tackle one skill at a time, practise it live, and leave with a script you can use the same week.</p>
     <div class="grid">
 
       <div class="topic" style="--c:var(--pink)"><h3>Get Leads &amp; Prospecting</h3><ul>
@@ -228,7 +311,7 @@
           <dt>When</dt><dd>Twice a month, Wednesdays</dd>
           <dt>Time</dt><dd>2:00 – 3:00 PM</dd>
           <dt>Where</dt><dd>Right at Home Office</dd>
-          <dt>Starting</dt><dd>October 14</dd>
+          <dt>Began</dt><dd>October 14 · join any session</dd>
         </dl>
       </div>
       <div class="card price-card">
@@ -243,9 +326,46 @@
           <dt>When</dt><dd>Twice a month, Fridays</dd>
           <dt>Time</dt><dd>11:00 AM – 12:00 PM</dd>
           <dt>Where</dt><dd>Live on Zoom</dd>
-          <dt>Starting</dt><dd>October 23</dd>
+          <dt>Starts</dt><dd>October 23</dd>
         </dl>
       </div>
+    </div>
+    <h3 class="get-title">What you get every month</h3>
+    <ul class="get">
+      <li>Four live coaching sessions (2 in person, 2 on Zoom)</li>
+      <li>Word-for-word scripts for calls, texts and emails</li>
+      <li>Live role-play with real objections</li>
+      <li>A practical action step to implement each week</li>
+      <li>A room of agents to practise and swap ideas with</li>
+      <li>Pick the format that fits your week, or attend both</li>
+    </ul>
+  </div>
+</section>
+
+<section id="proof" class="topics-bg">
+  <div class="wrap">
+    <h2 class="center">What agents are saying</h2>
+    <p class="lead center">Real feedback from Right at Home agents.</p>
+    <div class="quotes ph">
+      <blockquote class="quote"><span class="ph-note">PLACEHOLDER</span><p>"[Real quote from an agent about a specific result, ideally including one hurdle they got past.]"</p><footer>[Name], Right at Home Realty</footer></blockquote>
+      <blockquote class="quote"><span class="ph-note">PLACEHOLDER</span><p>"[Real quote about the scripts or role-play.]"</p><footer>[Name], Right at Home Realty</footer></blockquote>
+      <blockquote class="quote"><span class="ph-note">PLACEHOLDER</span><p>"[Real quote from a newer agent about getting started.]"</p><footer>[Name], Right at Home Realty</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2 class="center">Questions, answered</h2>
+    <p class="lead center">Not sure yet? Start here.</p>
+    <div class="faq">
+      <details><summary>Do I have to attend both the in-person and Zoom sessions?</summary><p>No. Your $99/month covers all four sessions, but you can attend whichever suit your schedule.</p></details>
+      <details><summary>Is it only for new agents?</summary><p>No. Topics range from getting your first lead to luxury, investors and building a team, so there is something for every stage. <em>[Confirm]</em></p></details>
+      <details><summary>Is there a contract? Can I cancel?</summary><p>[Add the cancellation policy.]</p></details>
+      <details><summary>What if I miss a session?</summary><p>[Add whether sessions are recorded or repeated.]</p></details>
+      <details><summary>Do I have to pay to register my interest?</summary><p>No. Registering your interest is free, with no payment and no obligation.</p></details>
+      <details><summary>Who can join?</summary><p>The Implementation Lab is open to all Right at Home agents.</p></details>
+      <details><summary>How do I pay the $99/month?</summary><p>[Add payment method and when it is billed.]</p></details>
     </div>
   </div>
 </section>
@@ -278,8 +398,24 @@
 </footer>
 
 <script>
-  // TODO: point REGISTER_URL at the real sign-up form / endpoint.
-  // Until then the form falls back to opening an email draft.
+  // Collapse long topic lists to the first 6 items (all visible if JS is off).
+  document.querySelectorAll(".topic").forEach(function (t) {
+    var items = t.querySelectorAll("li");
+    if (items.length <= 7) return;
+    t.classList.add("collapsed");
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "more";
+    b.textContent = "Show all " + items.length;
+    b.addEventListener("click", function () {
+      var c = t.classList.toggle("collapsed");
+      b.textContent = c ? "Show all " + items.length : "Show less";
+    });
+    t.appendChild(b);
+  });
+
+  // TODO: set REGISTER_URL to the real sign-up form (e.g. Mailchimp / Google Form).
+  // While empty, the form falls back to opening an email draft.
+  var REGISTER_URL = "";
   var REGISTER_EMAIL = "ryan@thaparteam.ca";
   document.getElementById("form").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -290,6 +426,7 @@
       thanks.textContent = "Please enter your name and a valid email.";
       return;
     }
+ if (REGISTER_URL) { window.location.href = REGISTER_URL; return; }
     var body = "Name: " + name + "\nEmail: " + email + "\nPhone: " + f.phone.value.trim();
     window.location.href = "mailto:" + REGISTER_EMAIL +
       "?subject=" + encodeURIComponent("Implementation Lab: register interest") +
