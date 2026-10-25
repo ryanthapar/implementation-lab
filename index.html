@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Implementation Lab | Real Estate Coaching with Monica Thapar</title>
-<meta name="description" content="Implementation Lab: hands-on real estate coaching for Right at Home agents. Real-world training, practical steps, scripts and role-play. $99/month, two in-person and two Zoom sessions every month.">
+<meta name="description" content="Implementation Lab: hands-on real estate coaching for Right at Home agents. Real-world training, practical steps, scripts and role-play. $99/month, two live Zoom sessions every month plus in-person workshops. Starts November 18.">
 <style>
   :root {
     --ink: #1c1633;
@@ -162,6 +162,16 @@
   .quote p { margin: 0 0 14px; font-size: 1.02rem; }
   .quote footer { background: none; color: var(--muted); padding: 0; text-align: left; font-size: .88rem; font-weight: 700; }
 
+  /* calendar */
+  .cal { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 20px; }
+  .month { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+  .month h4 { margin: 0 0 10px; font-size: 1rem; color: var(--purple-dark); }
+  .month ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .month li { display: flex; justify-content: space-between; gap: 8px; font-size: .88rem; font-weight: 700; padding: 6px 10px; border-radius: 8px; background: #f2ecfd; }
+  .month li span { font-weight: 600; color: var(--muted); }
+  .month li.ws { background: var(--yellow); color: var(--purple-dark); }
+  .month li.ws span { color: var(--purple-dark); font-weight: 800; }
+
   /* what you get */
   .get { list-style: none; padding: 0; margin: 36px auto 0; max-width: 760px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 28px; }
   .get li { padding-left: 28px; position: relative; font-weight: 600; }
@@ -190,9 +200,10 @@
     .about { grid-template-columns: 1fr; }
     .photo { max-width: 260px; aspect-ratio: 1; }
     .stats .wrap { grid-template-columns: repeat(2, 1fr); }
+    .cal { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 520px) {
-    .grid, .steps, .get { grid-template-columns: 1fr; }
+    .grid, .steps, .get, .cal { grid-template-columns: 1fr; }
     section { padding: 48px 0; }
     .hero { padding: 52px 0 60px; }
   }
@@ -215,9 +226,9 @@
       <a class="btn btn-primary" href="#register">Register your interest</a>
       <a class="btn btn-ghost" href="#topics">See what we cover</a>
     </div>
-    <p class="price-pill"><b>$99/month</b> · two in-person + two Zoom sessions every month</p>
+    <p class="price-pill"><b>$99/month</b> · two live Zoom sessions every month + in-person workshops · starts Nov 18</p>
     <ul class="facts">
-      <li>Wednesdays in person &amp; Fridays on Zoom</li>
+      <li>Live on Zoom, Wednesdays, 90 minutes</li>
       <li>No payment required to register</li>
       <li>No obligation</li>
       <li>Open to all Right at Home agents</li>
@@ -301,43 +312,64 @@
 
 <section id="schedule">
   <div class="wrap">
-    <h2 class="center">Two ways to attend, four sessions a month</h2>
-    <p class="lead center">Come in person, join on Zoom, or do both. Same coaching, whichever suits your week.</p>
+    <h2 class="center">Two live Zoom sessions a month, plus in-person workshops</h2>
+    <p class="lead center">Starting Wednesday, November 18, 2026. Every session is 90 minutes, and the workshops are in-person events we host through the year.</p>
     <div class="sched">
       <div class="card">
-        <span class="tag">In person</span>
-        <h3>In-person sessions</h3>
+        <span class="tag">Online</span>
+        <h3>Live Zoom sessions</h3>
         <dl>
-          <dt>When</dt><dd>Twice a month, Wednesdays</dd>
-          <dt>Time</dt><dd>2:00 – 3:00 PM</dd>
-          <dt>Where</dt><dd>Right at Home Office</dd>
-          <dt>Began</dt><dd>October 14 · join any session</dd>
+          <dt>When</dt><dd>Twice a month, on Wednesdays</dd>
+          <dt>Length</dt><dd>90 minutes</dd>
+          <dt>Time</dt><dd><span class="ph">[add start time + time zone]</span></dd>
+          <dt>Where</dt><dd>Live on Zoom</dd>
+          <dt>First session</dt><dd>November 18, 2026</dd>
         </dl>
       </div>
       <div class="card price-card">
         <div class="only">ONLY</div>
         <div class="big">$99<small>/month</small></div>
-        <p>Two in-person + two Zoom sessions every month!</p>
+        <p>Two live Zoom sessions every month, plus in-person workshops!</p>
       </div>
       <div class="card">
-        <span class="tag">Online</span>
-        <h3>Zoom sessions</h3>
+        <span class="tag">In person</span>
+        <h3>Workshops</h3>
         <dl>
-          <dt>When</dt><dd>Twice a month, Fridays</dd>
-          <dt>Time</dt><dd>11:00 AM – 12:00 PM</dd>
-          <dt>Where</dt><dd>Live on Zoom</dd>
-          <dt>Starts</dt><dd>October 23</dd>
+          <dt>When</dt><dd>Four times over the first year</dd>
+          <dt>Dates</dt><dd>Feb 24, May 19, Sep 15 and Dec 8, 2027</dd>
+          <dt>Where</dt><dd><span class="ph">[add location]</span></dd>
+          <dt>Format</dt><dd>Hands-on, hosted by us</dd>
         </dl>
       </div>
     </div>
+
+    <h3 class="get-title">Session calendar</h3>
+    <p class="lead center" style="margin-top:8px">We skip Monday and Friday long weekends and Tuesdays, which are Right at Home internal training days.</p>
+    <div class="cal">
+      <div class="month"><h4>November 2026</h4><ul><li><time datetime="2026-11-18">Wed Nov 18</time><span>Zoom</span></li></ul></div>
+      <div class="month"><h4>December 2026</h4><ul><li><time datetime="2026-12-02">Wed Dec 2</time><span>Zoom</span></li><li><time datetime="2026-12-16">Wed Dec 16</time><span>Zoom</span></li></ul></div>
+      <div class="month"><h4>January 2027</h4><ul><li><time datetime="2027-01-13">Wed Jan 13</time><span>Zoom</span></li><li><time datetime="2027-01-27">Wed Jan 27</time><span>Zoom</span></li></ul></div>
+      <div class="month"><h4>February 2027</h4><ul><li><time datetime="2027-02-10">Wed Feb 10</time><span>Zoom</span></li><li class="ws"><time datetime="2027-02-24">Wed Feb 24</time><span>In-person workshop</span></li></ul></div>
+      <div class="month"><h4>March 2027</h4><ul><li><time datetime="2027-03-10">Wed Mar 10</time><span>Zoom</span></li><li><time datetime="2027-03-24">Wed Mar 24</time><span>Zoom</span></li></ul></div>
+      <div class="month"><h4>April 2027</h4><ul><li><time datetime="2027-04-07">Wed Apr 7</time><span>Zoom</span></li><li><time datetime="2027-04-21">Wed Apr 21</time><span>Zoom</span></li></ul></div>
+      <div class="month"><h4>May 2027</h4><ul><li><time datetime="2027-05-05">Wed May 5</time><span>Zoom</span></li><li class="ws"><time datetime="2027-05-19">Wed May 19</time><span>In-person workshop</span></li></ul></div>
+      <div class="month"><h4>June 2027</h4><ul><li><time datetime="2027-06-02">Wed Jun 2</time><span>Zoom</span></li><li><time datetime="2027-06-16">Wed Jun 16</time><span>Zoom</span></li></ul></div>
+      <div class="month"><h4>July 2027</h4><ul><li><time datetime="2027-07-07">Wed Jul 7</time><span>Zoom</span></li><li><time datetime="2027-07-21">Wed Jul 21</time><span>Zoom</span></li></ul></div>
+      <div class="month"><h4>August 2027</h4><ul><li><time datetime="2027-08-04">Wed Aug 4</time><span>Zoom</span></li><li><time datetime="2027-08-18">Wed Aug 18</time><span>Zoom</span></li></ul></div>
+      <div class="month"><h4>September 2027</h4><ul><li class="ws"><time datetime="2027-09-15">Wed Sep 15</time><span>In-person workshop</span></li><li><time datetime="2027-09-29">Wed Sep 29</time><span>Zoom</span></li></ul></div>
+      <div class="month"><h4>October 2027</h4><ul><li><time datetime="2027-10-13">Wed Oct 13</time><span>Zoom</span></li><li><time datetime="2027-10-27">Wed Oct 27</time><span>Zoom</span></li></ul></div>
+      <div class="month"><h4>November 2027</h4><ul><li><time datetime="2027-11-10">Wed Nov 10</time><span>Zoom</span></li><li><time datetime="2027-11-24">Wed Nov 24</time><span>Zoom</span></li></ul></div>
+      <div class="month"><h4>December 2027</h4><ul><li class="ws"><time datetime="2027-12-08">Wed Dec 8</time><span>In-person workshop</span></li></ul></div>
+    </div>
+
     <h3 class="get-title">What you get every month</h3>
     <ul class="get">
-      <li>Four live coaching sessions (2 in person, 2 on Zoom)</li>
+      <li>Two live 90-minute coaching sessions on Zoom</li>
       <li>Word-for-word scripts for calls, texts and emails</li>
       <li>Live role-play with real objections</li>
       <li>A practical action step to implement each week</li>
       <li>A room of agents to practise and swap ideas with</li>
-      <li>Pick the format that fits your week, or attend both</li>
+      <li>In-person workshops through the year</li>
     </ul>
   </div>
 </section>
@@ -359,7 +391,7 @@
     <h2 class="center">Questions, answered</h2>
     <p class="lead center">Not sure yet? Start here.</p>
     <div class="faq">
-      <details><summary>Do I have to attend both the in-person and Zoom sessions?</summary><p>No. Your $99/month covers all four sessions, but you can attend whichever suit your schedule.</p></details>
+      <details><summary>Do I have to attend every session?</summary><p>No. Come to the Wednesday Zoom sessions and in-person workshops that suit your schedule. <em>[Confirm whether workshops are included in the $99/month]</em></p></details>
       <details><summary>Is it only for new agents?</summary><p>No. Topics range from getting your first lead to luxury, investors and building a team, so there is something for every stage. <em>[Confirm]</em></p></details>
       <details><summary>Is there a contract? Can I cancel?</summary><p>[Add the cancellation policy.]</p></details>
       <details><summary>What if I miss a session?</summary><p>[Add whether sessions are recorded or repeated.]</p></details>
