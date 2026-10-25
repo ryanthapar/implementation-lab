@@ -141,18 +141,19 @@
   .ph-note { display: inline-block; background: #fff3e0; color: #8a4b00; font-size: .75rem; font-weight: 800; padding: 2px 8px; border-radius: 6px; margin-bottom: 8px; }
 
   /* meet monica */
-  .about { display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: center; }
-  .photo { aspect-ratio: 4/5; border-radius: var(--radius); background: linear-gradient(160deg, #e9defa, #cdb8f2); display: grid; place-items: center; text-align: center; color: var(--purple); font-weight: 800; padding: 20px; }
+  .about { display: grid; grid-template-columns: 340px 1fr; gap: 40px; align-items: start; }
+  .photo { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 38% 25%; position: sticky; top: 20px; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(42,16,96,.2); }
   .about h2 { margin-bottom: 6px; }
   .about .role { color: var(--purple); font-weight: 800; margin: 0 0 14px; }
+  .callout { background: #fff8dc; border-left: 5px solid var(--yellow); padding: 14px 18px; border-radius: 10px; font-weight: 700; }
   .creds { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
   .creds li { background: #f2ecfd; color: var(--purple-dark); font-weight: 700; font-size: .85rem; padding: 6px 12px; border-radius: 999px; }
 
   /* stats */
   .stats { background: var(--purple); color: #fff; padding: 36px 0; }
-  .stats .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; text-align: center; }
+  .stats .wrap { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; text-align: center; }
   .stat b { display: block; font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--yellow); line-height: 1.1; }
-  .stat span { font-size: .9rem; opacity: .9; }
+  .stat span { font-size: .85rem; opacity: .9; }
   .stats.in-form { background: none; padding: 0; margin-top: 8px; }
   .stats.in-form .wrap { padding: 0; grid-template-columns: repeat(2, 1fr); text-align: left; }
 
@@ -210,7 +211,7 @@
     .grid, .steps { grid-template-columns: repeat(2, 1fr); }
     .sched, .reg-box, .quotes, .plans { grid-template-columns: 1fr; }
     .about { grid-template-columns: 1fr; }
-    .photo { max-width: 260px; aspect-ratio: 1; }
+    .photo { max-width: 320px; position: static; }
     .stats .wrap { grid-template-columns: repeat(2, 1fr); }
     .cal { grid-template-columns: repeat(2, 1fr); }
   }
@@ -251,14 +252,16 @@
 
 <section id="coach">
   <div class="wrap about">
-    <div class="photo ph"><span>[PLACEHOLDER]<br>Photo of Monica</span></div>
+    <img class="photo" src="monica.jpg" alt="Monica Thapar" width="985" height="776" loading="lazy">
     <div>
       <h2>Meet your coach, Monica Thapar</h2>
-      <p class="role">Realtor® · Right at Home Realty · Host of "Let's Farm"</p>
-      <p>Monica Thapar has spent 22 years in real estate, selling over $1 billion in property. She has been the #1 agent in Etobicoke since 2018, ranked #15 among Toronto realtors in 2026, and is a RE/MAX Hall of Fame award winner.</p>
-      <p>She has coached over 1,000 students, and built the Implementation Lab around one idea: information is not the problem, implementation is. Each session teaches one skill, then practises it with scripts and role-play so you leave with something you can use that week.</p>
+      <p class="role">One of Canada's most dominant geographical farmers, and the coach who will show you exactly how she did it.</p>
+      <p>Monica Thapar is the #1 REALTOR® in Etobicoke and has held that title for over a decade, consistently dominating a farm of more than 60,000 homes. Through geographical farming she ranks in the top 0.1% of TRREB and has broken the $2,300,000 mark in individual annual GCI. Across her career she has sold more than 1,700 homes and over $1 billion in real estate.</p>
+      <p>Her journey wasn't handed to her. Monica began her real estate career with $300,000 in personal debt and worked through profound personal adversity: years of IVF, eight miscarriages, and battles with anxiety and depression. That resilience is exactly what she teaches: the mindset shift that keeps agents consistent long enough for the system to start working.</p>
+      <p><strong>Let's Farm with Monica Thapar</strong> is her seven-figure coaching company, where she helps REALTORS® across North America build predictable, scalable businesses through geographical farming. Her coaching style is real, raw and authentic. As an active REALTOR® and #1 in her farm for over a decade, Monica doesn't just teach farming, she lives it.</p>
+      <p class="callout">In 2022, Monica was personally selected by Premier Doug Ford to sell his Etobicoke home. That's the power of geographical farming.</p>
       <ul class="creds">
-        <li>22 years in real estate</li><li>$1B+ in real estate sold</li><li>1,000+ students coached</li><li>#1 agent in Etobicoke since 2018</li><li>#15 realtor in Toronto, 2026</li><li>RE/MAX Hall of Fame award</li>
+        <li>22 years in real estate</li><li>1,000+ students coached</li><li>#15 realtor in Toronto, 2026</li><li>RE/MAX Hall of Fame award</li>
       </ul>
     </div>
   </div>
@@ -266,10 +269,12 @@
 
 <div class="stats">
   <div class="wrap">
-    <div class="stat"><b>22</b><span>years in real estate</span></div>
-    <div class="stat"><b>$1B+</b><span>in real estate sold</span></div>
-    <div class="stat"><b>1,000+</b><span>students coached</span></div>
-    <div class="stat"><b>#1</b><span>agent in Etobicoke since 2018</span></div>
+    <div class="stat"><b>#1</b><span>REALTOR® in Etobicoke for over a decade</span></div>
+    <div class="stat"><b>$1B+</b><span>in career sales volume</span></div>
+    <div class="stat"><b>1,700+</b><span>homes sold</span></div>
+    <div class="stat"><b>$2.3M</b><span>individual annual GCI</span></div>
+    <div class="stat"><b>60,000+</b><span>homes in her farm</span></div>
+    <div class="stat"><b>Top 0.1%</b><span>of TRREB REALTORS®</span></div>
   </div>
 </div>
 
