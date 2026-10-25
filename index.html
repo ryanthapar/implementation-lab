@@ -190,9 +190,12 @@
   .get li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 900; }
   .get-title { text-align: center; margin: 44px 0 0; font-size: 1.3rem; }
 
-  /* topic collapse */
-  .topic.collapsed li:nth-child(n+7) { display: none; }
-  .more { margin: 0 18px 18px; background: none; border: 0; color: var(--c); font: inherit; font-weight: 800; cursor: pointer; padding: 0; text-decoration: underline; }
+  .topic .outcome { margin: 0; padding: 0 18px 12px; font-size: .98rem; font-weight: 700; line-height: 1.4; color: var(--ink); }
+  .topic .outcome + ul { border-top: 1px solid var(--line); padding-top: 10px; }
+  .topic .note { margin: 0; padding: 0 18px 10px; font-size: .92rem; }
+  .topic h4 { margin: 4px 18px 6px; padding-top: 10px; border-top: 1px solid var(--line); font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--c); }
+  .topic h4 + .note { padding-top: 0; color: var(--muted); }
+  .topic .quoted li { font-style: italic; }
 
   /* faq */
   .faq { max-width: 780px; margin: 0 auto; }
@@ -290,18 +293,152 @@
 
 <section id="topics" class="topics-bg">
   <div class="wrap">
-    <h2 class="center">What we cover</h2>
+    <h2 class="center">What you will be able to do</h2>
     <p class="lead center">Three tracks: buyers, sellers and farming. You will tackle one skill at a time, practise it live, and leave with a script you can use the same week.</p>
     <div class="grid">
 
-      <div class="topic" style="--c:var(--blue)"><h3>Buyers</h3><ul>
-        <li>Finding buyer leads</li><li>Initial 5 key questions</li><li>The 5 W's (meat)</li><li>Why not signed?</li><li>4 steps to signing</li><li>Buyer consultation</li><li>Needs analysis</li><li>Buyer presentation</li><li>Buyer Representation Agreement</li><li>Agency &amp; disclosure</li><li>Showing strategy</li><li>Writing offers</li><li>Negotiation tactics</li><li>Multiple offer strategy</li><li>Conditional clauses</li><li>Inclusions &amp; exclusions</li><li>Financing basics</li><li>Mortgage options</li><li>Title &amp; survey</li><li>What to watch for (red flags)</li><li>Buyer objections (10)</li><li>Buyer objection scenarios</li><li>First-time buyers</li><li>Upsizing &amp; downsizing</li><li>Relocations</li><li>Investors &amp; new builds</li><li>New construction</li><li>Multi-family &amp; pre-construction</li><li>Luxury &amp; high-end</li><li>Rural &amp; cottage properties</li><li>Commercial basics</li><li>Rentals &amp; property management</li></ul></div>
+      <div class="topic" style="--c:var(--blue)"><h3>Buyers</h3>
+        <p class="outcome">You will learn how to close 97% of your buyer appointments and stop showing homes without a Buyer Representation Agreement.</p>
 
-      <div class="topic" style="--c:var(--green)"><h3>Sellers</h3><ul>
-        <li>Finding listing leads</li><li>Pre-listing package</li><li>Listing presentation</li><li>Listing Agreement</li><li>Pricing strategy</li><li>CMA &amp; market analysis</li><li>Handling price objections</li><li>6% commission &amp; fee discussions</li><li>Commission objections</li><li>Seller objection scenarios</li><li>Staging, photos, video, floor plans</li><li>Just Listed / Just Sold marketing</li><li>Open houses</li><li>Offers &amp; negotiations</li><li>Price reductions</li><li>FSBOs (For Sale By Owner)</li><li>Sellers with multiple mortgages</li><li>Liens &amp; multiple mortgages</li><li>Distressed sellers</li><li>Divorce, estate, power of sale</li><li>A white lie from the basement</li><li>Seniors &amp; estate sales</li><li>Divorce &amp; separation</li><li>RECO &amp; Code of Ethics</li><li>OREA forms explained</li></ul></div>
+        <h4>Monica's buyer presentation</h4>
+        <ul>
+          <li>Initial 5 key questions</li>
+          <li>The 5 W's</li>
+          <li>The 4 steps of buying</li>
+          <li>A copy of the entire presentation</li>
+        </ul>
 
-      <div class="topic" style="--c:var(--pink)"><h3>Farming</h3><ul>
-        <li>Farming &amp; neighbourhoods</li><li>Door knocking</li><li>Open houses for lead gen</li><li>10 ways to get leads</li><li>Sphere of influence</li><li>Past clients</li><li>Just Listed / Just Sold farming</li><li>Online leads</li><li>Social media leads</li><li>Cold calling &amp; texting</li><li>Events &amp; networking</li><li>B2B relationships</li><li>Tim Hortons strategy</li><li>Database building</li><li>CRM &amp; database management</li><li>Follow up systems</li><li>What to say to a lead</li><li>Phone scripts</li><li>Text &amp; email scripts</li><li>Objection handling</li><li>Role-play practice</li><li>Handling difficult people</li><li>Reactivation campaigns</li><li>Win-back strategy</li><li>Nurturing past clients</li><li>Client anniversary system</li><li>Market updates &amp; market reports</li><li>Referrals &amp; testimonials</li><li>Turning one client into many</li><li>Thank you tactics</li><li>Client events</li><li>Personal branding</li><li>Your online presence</li><li>Website &amp; bio</li><li>Building credibility</li><li>Your "brand story"</li><li>Social media content ideas</li><li>Reels, videos &amp; live</li><li>What to post each week</li><li>Email marketing &amp; newsletters</li><li>Flyers, postcards, mailers</li><li>Quick marketing ideas</li><li>Building a business plan</li><li>Setting income goals</li><li>Hiring &amp; working with a team</li></ul></div>
+        <h4>The 15 objections you'll learn to handle</h4>
+        <p class="note">The things buyers say that stall a signed agreement. You'll get a clear, word-for-word response to each one.</p>
+        <ul class="quoted">
+          <li>&ldquo;I can find all the homes online. Why do I need an agent?&rdquo;</li>
+          <li>&ldquo;I want to work directly with the listing agent.&rdquo;</li>
+          <li>&ldquo;I just go to open houses.&rdquo;</li>
+          <li>&ldquo;I just look for for-sale signs and call the listing agent.&rdquo;</li>
+          <li>&ldquo;I use online search platforms like Realtor.ca.&rdquo;</li>
+          <li>&ldquo;I'll get a better deal if I go with the listing agent.&rdquo;</li>
+          <li>&ldquo;I don't want to sign anything.&rdquo;</li>
+          <li>&ldquo;I want to look at homes first.&rdquo;</li>
+          <li>&ldquo;I'm not ready to buy yet. I'm just looking.&rdquo;</li>
+          <li>&ldquo;I need to talk to my partner or family first.&rdquo;</li>
+          <li>&ldquo;I'm already working with another agent.&rdquo;</li>
+          <li>&ldquo;Why should I pay you? What's your commission and who pays it?&rdquo;</li>
+          <li>&ldquo;I'll get pre-approved first, then call you.&rdquo;</li>
+          <li>&ldquo;My friend or relative is an agent.&rdquo;</li>
+          <li>&ldquo;Can't we sign once we find a house we like?&rdquo;</li>
+        </ul>
+
+        <h4>Contracts, finance &amp; forms</h4>
+        <ul>
+          <li>Agency &amp; disclosure</li>
+          <li>The Buyer Representation Agreement and other OREA forms, explained</li>
+          <li>Financing basics &amp; mortgage options</li>
+          <li>Title &amp; survey</li>
+          <li>Conditional clauses, inclusions &amp; exclusions</li>
+          <li>Red flags to catch before they cost you a deal</li>
+        </ul>
+
+        <h4>Specialty buyers</h4>
+        <ul>
+          <li>First-time buyers &amp; new construction</li>
+          <li>Investors, including multi-family &amp; pre-construction</li>
+          <li>Relocations, upsizing &amp; downsizing</li>
+          <li>Luxury &amp; high-end</li>
+          <li>Commercial basics, rural &amp; cottage properties, rentals &amp; property management</li>
+        </ul>
+
+        <h4>Plus</h4>
+        <ul>
+          <li>Our guide and SOPs to run a first-time home buyer event</li>
+          <li>How to show fewer homes to a buyer before they make an offer</li>
+          <li>How to handle the cash back question</li>
+        </ul>
+      </div>
+
+      <div class="topic" style="--c:var(--green)"><h3>Sellers</h3>
+        <p class="outcome">You will walk into a listing presentation prepared, handle the price and commission questions, and win the listing.</p>
+        <p class="note">Learn to get 6% commission, a 6-month term and the right price. You'll learn the same listing presentation Monica used for Premier Doug Ford's listing, and get her full pre-listing package and listing presentation.</p>
+        <ul>
+          <li>How to get sellers realistic on price</li>
+          <li>CMA &amp; market analysis that sellers actually read</li>
+          <li>6% commission &amp; fee discussions</li>
+          <li>How to use 1 listing to get 3 more with effective marketing</li>
+          <li>Open houses</li>
+          <li>Offers &amp; negotiations</li>
+          <li>How to prepare sellers for multiple offers and listing low</li>
+          <li>Sellers with multiple mortgages, liens &amp; title issues</li>
+          <li>How to get sellers to agree to a $100k price reduction</li>
+          <li>FSBOs (For Sale By Owner)</li>
+          <li>Distressed sellers</li>
+        </ul>
+
+        <h4>Seller situations &amp; objections</h4>
+        <ul>
+          <li>Seller objection scenarios, including price and commission</li>
+          <li>How to handle sensitive situations: divorce, estate, power of sale</li>
+          <li>How to work with seniors &amp; estate sales</li>
+          <li>How to work with divorce &amp; separation clients</li>
+        </ul>
+
+        <h4>Rules &amp; forms</h4>
+        <ul>
+          <li>RECO rules &amp; the Code of Ethics, in plain language</li>
+          <li>The Listing Agreement, explained</li>
+        </ul>
+      </div>
+
+      <div class="topic" style="--c:var(--pink)"><h3>Farming</h3>
+        <p class="outcome">You will build a farming plan and start getting leads from your own neighbourhood, past clients and sphere, then follow up so no lead goes cold.</p>
+
+        <h4>Generate leads</h4>
+        <ul>
+          <li>Geographical farming &amp; door knocking</li>
+          <li>How to run online lead campaigns (Facebook &amp; Google PPC)</li>
+          <li>How to become your sphere's #1 recommended REALTOR®</li>
+          <li>How to get leads from social media (organic content)</li>
+          <li>How to get leads from SEO</li>
+          <li>How to get recommended by ChatGPT</li>
+          <li>Past client programs to get more referrals and spend less time</li>
+          <li>How to get business from your service providers</li>
+          <li>How to work expired listings the legal way</li>
+        </ul>
+
+        <h4>Marketing &amp; branding</h4>
+        <ul>
+          <li>How to build a personal brand and a "brand story" that builds credibility</li>
+          <li>What to post each week: content ideas, reels, videos &amp; live</li>
+          <li>How to set up your website &amp; bio so clients trust you before they call</li>
+          <li>Email marketing &amp; newsletters</li>
+          <li>Market reports that show you know your neighbourhood</li>
+          <li>Just Listed / Just Sold flyers, postcards &amp; mailers</li>
+          <li>Quick marketing ideas you can use this week</li>
+          <li>Client events</li>
+        </ul>
+
+        <h4>Client care &amp; follow up</h4>
+        <ul>
+          <li>How to set up your CRM &amp; database so no lead falls through the cracks</li>
+          <li>Follow-up systems and what to say to a lead</li>
+          <li>How to nurture past clients with market updates and a client anniversary system</li>
+          <li>How to ask for referrals &amp; testimonials</li>
+          <li>How to turn one client into many</li>
+          <li>Reactivation &amp; win-back campaigns</li>
+          <li>Thank-you tactics</li>
+        </ul>
+
+        <h4>Scripts &amp; role-play</h4>
+        <ul>
+          <li>Word-for-word phone, text &amp; email scripts</li>
+          <li>Live role-play with real objections, until the words feel natural</li>
+          <li>How to handle difficult people</li>
+        </ul>
+
+        <h4>Business growth</h4>
+        <ul>
+          <li>How to build a business plan and set income goals</li>
+          <li>How to hire &amp; work with a team</li>
+        </ul>
+      </div>
 
     </div>
   </div>
@@ -461,21 +598,6 @@
 </footer>
 
 <script>
-  // Collapse long topic lists to the first 6 items (all visible if JS is off).
-  document.querySelectorAll(".topic").forEach(function (t) {
-    var items = t.querySelectorAll("li");
-    if (items.length <= 7) return;
-    t.classList.add("collapsed");
-    var b = document.createElement("button");
-    b.type = "button"; b.className = "more";
-    b.textContent = "Show all " + items.length;
-    b.addEventListener("click", function () {
-      var c = t.classList.toggle("collapsed");
-      b.textContent = c ? "Show all " + items.length : "Show less";
-    });
-    t.appendChild(b);
-  });
-
   // TODO: set REGISTER_URL to the real sign-up form (e.g. Mailchimp / Google Form).
   // While empty, the form falls back to opening an email draft.
   var REGISTER_URL = "";
