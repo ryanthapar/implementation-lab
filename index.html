@@ -173,6 +173,10 @@
   .month li.ws { background: var(--yellow); color: var(--purple-dark); }
   .month li.ws span { color: var(--purple-dark); font-weight: 800; }
 
+  .pay-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 0 0 22px; }
+  .form-title { margin: 0 0 14px; font-size: 1.15rem; }
+  .plan .btn { text-align: center; }
+
   /* pricing */
   .plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 820px; margin: 0 auto; }
   .plan { text-align: center; position: relative; display: flex; flex-direction: column; }
@@ -239,7 +243,7 @@
     <p class="sub">From getting your first lead to negotiating your next million-dollar listing.</p>
     <p class="by">Real-world training, practical steps, scripts and role-play with Monica Thapar.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#register">Register your interest</a>
+      <a class="btn btn-primary" href="#pricing">Register today</a>
       <a class="btn btn-ghost" href="#topics">See what we cover</a>
     </div>
     <p class="price-pill"><b>$139/month + HST</b> · two live Zoom sessions every month + in-person workshops · starts Nov 18</p>
@@ -403,7 +407,7 @@
           <li>In-person workshops in Toronto included</li>
           <li>Bonus session when you register today</li>
         </ul>
-        <a class="btn btn-primary" href="#register">Register today</a>
+        <a class="btn btn-primary" href="https://square.link/u/lSktTXJM" target="_blank" rel="noopener">Register: $139/mo + HST</a>
       </div>
       <div class="card plan best">
         <span class="badge">Best value · 2 months free</span>
@@ -417,7 +421,7 @@
           <li>In-person workshops in Toronto included</li>
           <li>Bonus session when you register today</li>
         </ul>
-        <a class="btn btn-primary" href="#register">Register today</a>
+        <a class="btn btn-primary" href="https://square.link/u/IL59ygD4" target="_blank" rel="noopener">Register: $1,390 + HST</a>
       </div>
     </div>
     <div class="bonus"><b>Bonus session when you register today:</b> choose a <b>business plan session</b> or a <b>marketing consultation</b>.</div>
@@ -455,23 +459,27 @@
 <section id="register" class="register">
   <div class="wrap reg-box">
     <div>
-      <h2>Register your interest</h2>
-      <p class="lead">Tell us you're in and we'll send enrollment details, your payment option and your bonus session choice. Registering today gets you the bonus session.</p>
+      <h2>Register today</h2>
+      <p class="lead">Pick a payment option to register on our secure Square checkout. Then tell us which bonus session you want.</p>
+      <div class="pay-row">
+        <a class="btn btn-primary" href="https://square.link/u/lSktTXJM" target="_blank" rel="noopener">Monthly: $139 + HST</a>
+        <a class="btn btn-ghost" href="https://square.link/u/IL59ygD4" target="_blank" rel="noopener">Paid in full: $1,390 + HST</a>
+      </div>
       <ul class="checks">
         <li>Register today and get a bonus session: a business plan session or a marketing consultation</li>
         <li>For Right at Home agents only</li>
       </ul>
     </div>
     <form id="form" novalidate>
+      <h3 class="form-title">Choose your bonus session</h3>
       <label>Full name<input name="name" type="text" autocomplete="name" required></label>
       <label>Email<input name="email" type="email" autocomplete="email" required></label>
-      <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel"></label>
-      <label>Payment option
+      <label>Payment option you chose
         <select name="plan"><option>Monthly: $139 + HST x 12</option><option>Paid in full: $1,390 + HST</option></select></label>
       <label>Bonus session
         <select name="bonus"><option>Business plan session</option><option>Marketing consultation</option></select></label>
-      <button class="btn" type="submit">Count me in</button>
-      <p class="fine">We will confirm your spot and send payment details.</p>
+      <button class="btn" type="submit">Send my bonus choice</button>
+      <p class="fine">Registering today gets you one bonus session. For Right at Home agents only.</p>
       <p id="thanks"></p>
     </form>
   </div>
@@ -503,9 +511,6 @@
     t.appendChild(b);
   });
 
-  // TODO: set REGISTER_URL to the real sign-up form (e.g. Mailchimp / Google Form).
-  // While empty, the form falls back to opening an email draft.
-  var REGISTER_URL = "";
   var REGISTER_EMAIL = "ryan@thaparteam.ca";
   document.getElementById("form").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -516,13 +521,12 @@
       thanks.textContent = "Please enter your name and a valid email.";
       return;
     }
- if (REGISTER_URL) { window.location.href = REGISTER_URL; return; }
-    var body = "Name: " + name + "\nEmail: " + email + "\nPhone: " + f.phone.value.trim() + "\nPlan: " + f.plan.value + "\nBonus: " + f.bonus.value;
+    var body = "Name: " + name + "\nEmail: " + email  + "\nPlan: " + f.plan.value + "\nBonus: " + f.bonus.value;
     window.location.href = "mailto:" + REGISTER_EMAIL +
-      "?subject=" + encodeURIComponent("Implementation Lab: register interest") +
+      "?subject=" + encodeURIComponent("Implementation Lab: bonus session choice") +
       "&body=" + encodeURIComponent(body);
     thanks.style.display = "block";
-    thanks.textContent = "Thanks! Send the email that just opened and you're on the list.";
+    thanks.textContent = "Thanks! Send the email that just opened to lock in your bonus session.";
   });
 </script>
 </body>
