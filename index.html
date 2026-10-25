@@ -197,6 +197,9 @@
   .topic h4 + .note { padding-top: 0; color: var(--muted); }
   .topic .quoted li { font-style: italic; }
 
+  .topic.collapsed .extra { display: none; }
+  .more { margin: 0 18px 18px; background: none; border: 0; color: var(--c); font: inherit; font-weight: 800; cursor: pointer; padding: 0; text-decoration: underline; }
+
   /* faq */
   .faq { max-width: 780px; margin: 0 auto; }
   .faq details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 10px; padding: 0 20px; }
@@ -598,6 +601,31 @@
 </footer>
 
 <script>
+  // Collapse long topic cards to the first 6 list items (all visible if JS is off).
+  document.querySelectorAll(".topic").forEach(function (t) {
+    var total = t.querySelectorAll("li").length;
+    if (total <= 7) return;
+    var n = 0;
+    Array.prototype.forEach.call(t.children, function (el) {
+      if (el.tagName === "UL") {
+        var lis = el.querySelectorAll("li");
+        if (n >= 6) el.classList.add("extra");
+        else Array.prototype.forEach.call(lis, function (li) { if (n++ >= 6) li.classList.add("extra"); });
+      } else if (el.matches("h4, .note") && n >= 6) {
+        el.classList.add("extra");
+      }
+    });
+    t.classList.add("collapsed");
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "more";
+    b.textContent = "Show all " + total;
+    b.addEventListener("click", function () {
+      var c = t.classList.toggle("collapsed");
+      b.textContent = c ? "Show all " + total : "Show less";
+    });
+    t.appendChild(b);
+  });
+
   // TODO: set REGISTER_URL to the real sign-up form (e.g. Mailchimp / Google Form).
   // While empty, the form falls back to opening an email draft.
   var REGISTER_URL = "";
