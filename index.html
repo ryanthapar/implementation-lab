@@ -95,7 +95,7 @@
 
   /* topics */
   .topics-bg { background: #f2ecfd; }
-  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: start; }
   .topic { background: var(--card); border-radius: var(--radius); overflow: hidden; box-shadow: 0 2px 10px rgba(42,16,96,.08); border-top: 6px solid var(--c); }
   .topic h3 { margin: 0; padding: 16px 18px 8px; font-size: 1.05rem; color: var(--c); text-transform: uppercase; letter-spacing: .03em; }
   .topic ul { list-style: none; margin: 0; padding: 0 18px 18px; font-size: .92rem; }
@@ -207,7 +207,8 @@
   footer .tagline { color: #fff; font-size: 1.3rem; font-style: italic; font-weight: 700; margin-bottom: 8px; }
 
   @media (max-width: 960px) {
-    .grid, .steps { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .grid { grid-template-columns: 1fr; }
     .sched, .reg-box, .quotes, .plans { grid-template-columns: 1fr; }
     .about { grid-template-columns: 1fr; }
     .photo { max-width: 260px; aspect-ratio: 1; }
@@ -290,32 +291,17 @@
 <section id="topics" class="topics-bg">
   <div class="wrap">
     <h2 class="center">What we cover</h2>
-    <p class="lead center">Eight core areas, from prospecting to specialty markets. You will tackle one skill at a time, practise it live, and leave with a script you can use the same week.</p>
+    <p class="lead center">Three tracks: buyers, sellers and farming. You will tackle one skill at a time, practise it live, and leave with a script you can use the same week.</p>
     <div class="grid">
 
-      <div class="topic" style="--c:var(--pink)"><h3>Get Leads &amp; Prospecting</h3><ul>
-        <li>Door knocking</li><li>Open houses</li><li>Farming &amp; neighbourhoods</li><li>10 ways to get leads</li><li>Sphere of influence</li><li>Past clients</li><li>Just Listed / Just Sold</li><li>Online leads</li><li>Social media leads</li><li>Cold calling &amp; texting</li><li>Events &amp; networking</li><li>Database building</li><li>Reactivation campaigns</li><li>B2B relationships</li><li>Tim Hortons strategy</li></ul></div>
-
       <div class="topic" style="--c:var(--blue)"><h3>Buyers</h3><ul>
-        <li>Finding buyer leads</li><li>Initial 5 key questions</li><li>The 5 W's (meat)</li><li>Why not signed?</li><li>4 steps to signing</li><li>Buyer consultation</li><li>Needs analysis</li><li>Buyer presentation</li><li>Showing strategy</li><li>Writing offers</li><li>Negotiation tactics</li><li>Multiple offer strategy</li><li>Working with first-time buyers</li><li>Investors &amp; new builds</li><li>Buyer objections (10)</li></ul></div>
+        <li>Finding buyer leads</li><li>Initial 5 key questions</li><li>The 5 W's (meat)</li><li>Why not signed?</li><li>4 steps to signing</li><li>Buyer consultation</li><li>Needs analysis</li><li>Buyer presentation</li><li>Buyer Representation Agreement</li><li>Agency &amp; disclosure</li><li>Showing strategy</li><li>Writing offers</li><li>Negotiation tactics</li><li>Multiple offer strategy</li><li>Conditional clauses</li><li>Inclusions &amp; exclusions</li><li>Financing basics</li><li>Mortgage options</li><li>Title &amp; survey</li><li>What to watch for (red flags)</li><li>Buyer objections (10)</li><li>Buyer objection scenarios</li><li>First-time buyers</li><li>Upsizing &amp; downsizing</li><li>Relocations</li><li>Investors &amp; new builds</li><li>New construction</li><li>Multi-family &amp; pre-construction</li><li>Luxury &amp; high-end</li><li>Rural &amp; cottage properties</li><li>Commercial basics</li><li>Rentals &amp; property management</li></ul></div>
 
-      <div class="topic" style="--c:var(--green)"><h3>Listings</h3><ul>
-        <li>Finding listing leads</li><li>Pre-listing package</li><li>Listing presentation</li><li>Pricing strategy</li><li>CMA &amp; market analysis</li><li>Handling price objections</li><li>6% commission &amp; fee discussions</li><li>Staging, photos, video, floor plans</li><li>Just Listed / Just Sold marketing</li><li>Open houses</li><li>Offers &amp; negotiations</li><li>Sellers with multiple mortgages</li><li>Price reductions</li><li>FSBOs (For Sale By Owner)</li><li>Distressed sellers</li></ul></div>
+      <div class="topic" style="--c:var(--green)"><h3>Sellers</h3><ul>
+        <li>Finding listing leads</li><li>Pre-listing package</li><li>Listing presentation</li><li>Listing Agreement</li><li>Pricing strategy</li><li>CMA &amp; market analysis</li><li>Handling price objections</li><li>6% commission &amp; fee discussions</li><li>Commission objections</li><li>Seller objection scenarios</li><li>Staging, photos, video, floor plans</li><li>Just Listed / Just Sold marketing</li><li>Open houses</li><li>Offers &amp; negotiations</li><li>Price reductions</li><li>FSBOs (For Sale By Owner)</li><li>Sellers with multiple mortgages</li><li>Liens &amp; multiple mortgages</li><li>Distressed sellers</li><li>Divorce, estate, power of sale</li><li>A white lie from the basement</li><li>Seniors &amp; estate sales</li><li>Divorce &amp; separation</li><li>RECO &amp; Code of Ethics</li><li>OREA forms explained</li></ul></div>
 
-      <div class="topic" style="--c:var(--orange)"><h3>Marketing &amp; Branding</h3><ul>
-        <li>Personal branding</li><li>Your online presence</li><li>Social media content ideas</li><li>Reels, videos &amp; live</li><li>Website &amp; bio</li><li>Email marketing</li><li>Quick marketing ideas</li><li>Flyers, postcards, mailers</li><li>What to post each week</li><li>Market reports</li><li>Building credibility</li><li>Getting your "brand story"</li><li>Newsletters</li><li>Client events</li></ul></div>
-
-      <div class="topic" style="--c:var(--purple)"><h3>Client Care &amp; Follow Up</h3><ul>
-        <li>CRM &amp; database management</li><li>Follow up systems</li><li>What to say to a lead</li><li>Nurturing past clients</li><li>Client anniversary system</li><li>Market updates</li><li>Referrals &amp; testimonials</li><li>Turning one client into many</li><li>Reactivation campaigns</li><li>Win-back strategy</li><li>Thank you tactics</li></ul></div>
-
-      <div class="topic" style="--c:#d19a00"><h3>Scripts &amp; Objections</h3><ul>
-        <li>Phone scripts</li><li>Text &amp; email scripts</li><li>Objection handling</li><li>Price objections</li><li>Commission objections</li><li>Why not signed?</li><li>Seller objection scenarios</li><li>Buyer objection scenarios</li><li>Divorce, estate, power of sale</li><li>A white lie from the basement</li><li>Role-play practice</li><li>Handling difficult people</li></ul></div>
-
-      <div class="topic" style="--c:var(--teal)"><h3>Legal, Finance &amp; Forms</h3><ul>
-        <li>RECO &amp; Code of Ethics</li><li>Agency &amp; disclosure</li><li>OREA forms explained</li><li>Buyer Representation Agreement</li><li>Listing Agreement</li><li>Financing basics</li><li>Mortgage options</li><li>Title &amp; survey</li><li>Liens &amp; multiple mortgages</li><li>Conditional clauses</li><li>Inclusions &amp; exclusions</li><li>What to watch for (red flags)</li></ul></div>
-
-      <div class="topic" style="--c:var(--red)"><h3>Specialty Markets &amp; Business Growth</h3><ul>
-        <li>Seniors &amp; estate sales</li><li>Divorce &amp; separation</li><li>Investors</li><li>Relocations</li><li>Upsizing &amp; downsizing</li><li>First-time buyers</li><li>New construction</li><li>Luxury &amp; high-end</li><li>Commercial basics</li><li>Multi-family &amp; pre-construction</li><li>Rural &amp; cottage properties</li><li>Rentals &amp; property management</li><li>Building a business plan</li><li>Setting income goals</li><li>Hiring &amp; working with a team</li></ul></div>
+      <div class="topic" style="--c:var(--pink)"><h3>Farming</h3><ul>
+        <li>Farming &amp; neighbourhoods</li><li>Door knocking</li><li>Open houses for lead gen</li><li>10 ways to get leads</li><li>Sphere of influence</li><li>Past clients</li><li>Just Listed / Just Sold farming</li><li>Online leads</li><li>Social media leads</li><li>Cold calling &amp; texting</li><li>Events &amp; networking</li><li>B2B relationships</li><li>Tim Hortons strategy</li><li>Database building</li><li>CRM &amp; database management</li><li>Follow up systems</li><li>What to say to a lead</li><li>Phone scripts</li><li>Text &amp; email scripts</li><li>Objection handling</li><li>Role-play practice</li><li>Handling difficult people</li><li>Reactivation campaigns</li><li>Win-back strategy</li><li>Nurturing past clients</li><li>Client anniversary system</li><li>Market updates &amp; market reports</li><li>Referrals &amp; testimonials</li><li>Turning one client into many</li><li>Thank you tactics</li><li>Client events</li><li>Personal branding</li><li>Your online presence</li><li>Website &amp; bio</li><li>Building credibility</li><li>Your "brand story"</li><li>Social media content ideas</li><li>Reels, videos &amp; live</li><li>What to post each week</li><li>Email marketing &amp; newsletters</li><li>Flyers, postcards, mailers</li><li>Quick marketing ideas</li><li>Building a business plan</li><li>Setting income goals</li><li>Hiring &amp; working with a team</li></ul></div>
 
     </div>
   </div>
