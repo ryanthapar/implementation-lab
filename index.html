@@ -152,6 +152,11 @@
   .photo { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: 38% 25%; position: sticky; top: 20px; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(42,16,96,.2); }
   .about h2 { margin-bottom: 6px; }
   .about .role { color: var(--purple); font-weight: 800; margin: 0 0 14px; }
+  .ranks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 20px; }
+  .rank { background: linear-gradient(160deg, #3b1280, #5a1f9e); color: #fff; border-radius: 14px; padding: 16px 12px; text-align: center; box-shadow: 0 6px 18px rgba(42,16,96,.22); }
+  .rank b { display: block; font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 900; line-height: 1.05; color: var(--yellow); }
+  .rank span { display: block; margin-top: 4px; font-size: .85rem; font-weight: 700; line-height: 1.3; }
+  @media (max-width: 520px) { .ranks { grid-template-columns: 1fr; } }
   .callout { background: #fff8dc; border-left: 5px solid var(--yellow); padding: 14px 18px; border-radius: 10px; font-weight: 700; }
   .creds { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
   .creds li { background: #f2ecfd; color: var(--purple-dark); font-weight: 700; font-size: .85rem; padding: 6px 12px; border-radius: 999px; }
@@ -364,6 +369,11 @@
     <div>
       <h2>Meet your coach, Monica Thapar</h2>
       <p class="role">One of Canada's most dominant geographical farmers, and the coach who will show you exactly how she did it.</p>
+      <div class="ranks">
+        <div class="rank"><b>#1</b><span>REALTOR® in Etobicoke<sup>†</sup></span></div>
+        <div class="rank"><b>Top 100</b><span>agents in the GTA</span></div>
+        <div class="rank"><b>#15</b><span>realtor in Toronto, 2026</span></div>
+      </div>
       <p>Monica Thapar is the #1 REALTOR® in Etobicoke<sup>†</sup> and has held that title for over a decade, consistently dominating a farm of more than 60,000 homes. Through geographical farming she ranks in the top 0.1% of TRREB and has broken the $2,300,000 mark in individual annual GCI.<sup>¶</sup> Across her career she has sold more than 1,700 homes and over $1 billion in real estate.<sup>‡</sup></p>
       <p>Her journey wasn't handed to her. Monica began her real estate career with $300,000 in personal debt and worked through profound personal adversity: years of IVF, eight miscarriages, and battles with anxiety and depression. That resilience is exactly what she teaches: the mindset shift that keeps agents consistent long enough for the system to start working.</p>
       <p><strong>Let's Farm with Monica Thapar</strong> is her seven-figure coaching company, where she helps REALTORS® across North America build predictable, scalable businesses through geographical farming. Her coaching style is real, raw and authentic. As an active REALTOR® and #1 in her farm for over a decade<sup>†</sup>, Monica doesn't just teach farming, she lives it.</p>
@@ -371,7 +381,7 @@
       <blockquote class="pull"><p>“Your proof (selling Doug Ford's home) really sold me and made me 100% believe in what you do.”</p><footer>Khoa Le, Real Broker</footer></blockquote>
       <blockquote class="pull"><p>“Monica is an active agent working in Toronto doing exactly what she preaches, so the results are very evident.”</p><footer>Stephen Sun, RE/MAX Realtron</footer></blockquote>
       <ul class="creds">
-        <li>22 years in real estate</li><li>1,000+ students coached<sup>§</sup></li><li>#15 realtor in Toronto, 2026</li><li>RE/MAX Hall of Fame award</li>
+        <li>22 years in real estate</li><li>1,000+ students coached<sup>§</sup></li><li>RE/MAX Hall of Fame award</li>
       </ul>
     </div>
   </div>
