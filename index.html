@@ -98,7 +98,7 @@
   .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: start; }
   .topic { background: var(--card); border-radius: var(--radius); overflow: hidden; box-shadow: 0 2px 10px rgba(42,16,96,.08); border-top: 6px solid var(--b, var(--c)); }
   .topic h3 { margin: 0; padding: 16px 18px 8px; font-size: 1.05rem; color: var(--c); text-transform: uppercase; letter-spacing: .03em; }
-  .topic h3::before { content: ""; display: inline-block; width: 1.25em; height: 1.25em; margin-right: .5em; vertical-align: -.25em; background: var(--c); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z'/%3E%3C/svg%3E") center/contain no-repeat; }
+  .topic h3::before, .piece .front h3::before { content: ""; display: inline-block; width: 1.25em; height: 1.25em; margin-right: .5em; vertical-align: -.25em; background: var(--c); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z'/%3E%3C/svg%3E") center/contain no-repeat; }
   .topic ul { list-style: none; margin: 0; padding: 0 18px 18px; font-size: .92rem; }
   .topic li { padding: 3px 0 3px 22px; position: relative; }
   .topic li::before { content: "✓"; position: absolute; left: 0; color: var(--c); font-weight: 900; }
@@ -232,6 +232,37 @@
   .topic .quoted li { font-style: italic; }
 
   .topic.collapsed .extra { display: none; }
+
+  /* puzzle pieces */
+  .grid.pieces { gap: 6px; }
+  .piece { position: relative; perspective: 1400px; transition: height .6s ease; }
+  .piece .inner { position: relative; height: 100%; transition: transform .6s ease; transform-style: preserve-3d; }
+  .piece.open { z-index: 3; }
+  .piece.open .inner { transform: rotateY(180deg); }
+  .piece .front, .piece .back { position: absolute; top: 0; left: 0; width: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+  .piece .back { transform: rotateY(180deg); visibility: hidden; transition: visibility 0s .3s; }
+  .piece.open .back { visibility: visible; transition-delay: 0s; }
+  .piece .front { box-sizing: border-box; min-height: 310px; padding: 30px 40px; border-radius: 16px; background: var(--b, var(--c)); color: var(--fg, #fff); display: flex; flex-direction: column; justify-content: center; cursor: pointer; transition: visibility 0s 0s, filter .2s; }
+  .piece.open .front { visibility: hidden; transition-delay: .3s; }
+  .piece .front:hover { filter: brightness(1.07); }
+  .piece .front:focus-visible { outline: 3px solid var(--purple-dark); outline-offset: 3px; }
+  .piece .front h3 { margin: 0 0 12px; padding: 0; color: inherit; font-size: 1.35rem; text-transform: uppercase; letter-spacing: .03em; }
+  .piece .front h3::before { background: currentColor; }
+  .piece .front p { margin: 0; font-size: 1rem; font-weight: 600; line-height: 1.45; }
+  .piece .front .hint { align-self: flex-start; margin-top: 18px; padding: 6px 14px; border-radius: 999px; background: rgba(255,255,255,.25); font-weight: 800; font-size: .8rem; }
+  .piece.dark .front { color: var(--purple-dark); }
+  .piece.dark .front .hint { background: rgba(0,0,0,.12); }
+  .piece .back .topic { box-shadow: 0 4px 16px rgba(42,16,96,.12); border-radius: 16px; }
+  .piece .back .topic h3 { padding-right: 90px; }
+  .piece .back .close { position: absolute; top: 14px; right: 14px; z-index: 2; border: 0; border-radius: 999px; padding: 6px 14px; background: #f2ecfd; color: var(--purple-dark); font: inherit; font-weight: 800; font-size: .8rem; cursor: pointer; }
+  .piece .knob { position: absolute; width: 52px; height: 52px; border-radius: 50%; background: var(--b, var(--c)); display: none; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+  .piece.hasR .knob.kr { display: block; right: -26px; top: calc(50% - 26px); }
+  .piece.hasB .knob.kb { display: block; bottom: -26px; left: calc(50% - 26px); }
+  .piece.hasL .front { -webkit-mask-image: radial-gradient(circle 30px at 0 50%, transparent 29px, #000 30px); mask-image: radial-gradient(circle 30px at 0 50%, transparent 29px, #000 30px); }
+  .piece.hasT .front { -webkit-mask-image: radial-gradient(circle 30px at 50% 0, transparent 29px, #000 30px); mask-image: radial-gradient(circle 30px at 50% 0, transparent 29px, #000 30px); }
+  .piece.hasL.hasT .front { -webkit-mask-image: radial-gradient(circle 30px at 0 50%, transparent 29px, #000 30px), radial-gradient(circle 30px at 50% 0, transparent 29px, #000 30px); mask-image: radial-gradient(circle 30px at 0 50%, transparent 29px, #000 30px), radial-gradient(circle 30px at 50% 0, transparent 29px, #000 30px); -webkit-mask-composite: source-in; mask-composite: intersect; }
+  .piece-hint { text-align: center; color: var(--purple); font-weight: 800; margin: -14px 0 30px; }
+  @media (prefers-reduced-motion: reduce) { .piece, .piece .inner { transition: none; } }
   .more { margin: 0 18px 18px; background: none; border: 0; color: var(--c); font: inherit; font-weight: 800; cursor: pointer; padding: 0; text-decoration: underline; }
 
   /* faq */
@@ -358,6 +389,7 @@
   <div class="wrap">
     <h2 class="center">What you will be able to do</h2>
     <p class="lead center">The three main pieces of a successful real estate business, buyers, sellers and farming, plus the supporting pieces that hold it together. You will tackle one skill at a time, practise it live, and leave with a script you can use the same week.</p>
+    <p class="piece-hint">Click any piece to turn it over and see everything inside.</p>
     <div class="grid">
 
       <div class="topic" style="--c:var(--blue)"><h3>Buyers</h3>
@@ -693,32 +725,68 @@
 </footer>
 
 <script>
-  // Collapse long topic cards to the first 6 list items (all visible if JS is off).
-  document.querySelectorAll(".topic").forEach(function (t) {
-    if (t.classList.contains("sub")) return;
-    var total = t.querySelectorAll("li").length;
-    if (total <= 7) return;
-    var n = 0;
-    Array.prototype.forEach.call(t.children, function (el) {
-      if (el.tagName === "UL") {
-        var lis = el.querySelectorAll("li");
-        if (n >= 6) el.classList.add("extra");
-        else Array.prototype.forEach.call(lis, function (li) { if (n++ >= 6) li.classList.add("extra"); });
-      } else if (el.matches("h4, .note") && n >= 6) {
-        el.classList.add("extra");
+  // Turn each topic card into a puzzle piece that flips to show its full contents.
+  // Without JS the original cards stay as they are, fully visible.
+  (function () {
+    var grid = document.querySelector("#topics .grid");
+    if (!grid) return;
+    var hintLine = document.querySelector(".piece-hint");
+    var dark = { "Farming": 1, "Marketing & branding": 1 };
+    var pieces = [];
+    Array.prototype.slice.call(grid.children).forEach(function (t) {
+      if (!t.classList.contains("topic")) return;
+      var title = t.querySelector("h3").textContent.trim();
+      var outcome = t.querySelector(".outcome");
+      var el = document.createElement("div");
+      el.className = "piece" + (dark[title] ? " dark" : "");
+      el.setAttribute("style", t.getAttribute("style") || "");
+      el.innerHTML = '<div class="inner">' +
+        '<div class="front" role="button" tabindex="0" aria-expanded="false"><h3></h3><p></p><span class="hint">Click to open</span></div>' +
+        '<span class="knob kr"></span><span class="knob kb"></span>' +
+        '<div class="back"></div></div>';
+      el.querySelector("h3").textContent = title;
+      el.querySelector(".front p").textContent = outcome ? outcome.textContent : "";
+      var close = document.createElement("button");
+      close.type = "button"; close.className = "close"; close.textContent = "Close";
+      grid.insertBefore(el, t);
+      var back = el.querySelector(".back");
+      back.appendChild(t);
+      back.appendChild(close);
+      var front = el.querySelector(".front");
+      function toggle() {
+        var open = el.classList.toggle("open");
+        front.setAttribute("aria-expanded", open);
+        size(el);
+        if (open) setTimeout(function () { el.scrollIntoView({ behavior: "smooth", block: "nearest" }); }, 350);
       }
+      front.addEventListener("click", toggle);
+      front.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+      });
+      close.addEventListener("click", toggle);
+      pieces.push(el);
     });
-    t.classList.add("collapsed");
-    var b = document.createElement("button");
-    b.type = "button"; b.className = "more";
-    b.textContent = "Show all " + total;
-    b.addEventListener("click", function () {
-      var c = t.classList.toggle("collapsed");
-      b.textContent = c ? "Show all " + total : "Show less";
-    });
-    t.appendChild(b);
-  });
+    grid.classList.add("pieces");
 
+    function size(p) {
+      var face = p.classList.contains("open") ? p.querySelector(".back") : p.querySelector(".front");
+      p.style.height = face.offsetHeight + "px";
+    }
+    function layout() {
+      var cols = getComputedStyle(grid).gridTemplateColumns.split(" ").length;
+      pieces.forEach(function (p, i) {
+        p.classList.toggle("hasR", i % cols < cols - 1 && i + 1 < pieces.length);
+        p.classList.toggle("hasL", i % cols > 0);
+        p.classList.toggle("hasB", i + cols < pieces.length);
+        p.classList.toggle("hasT", i - cols >= 0);
+        size(p);
+      });
+    }
+    layout();
+    window.addEventListener("resize", layout);
+    window.addEventListener("load", layout);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+  })();
 </script>
 </body>
 </html>
