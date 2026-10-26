@@ -227,6 +227,7 @@
   .topic h4 + .note { padding-top: 0; color: var(--muted); }
   .topic .quoted li { font-style: italic; }
 
+  .sub-title { text-align: center; margin: 44px 0 18px; font-size: 1.3rem; color: var(--pink); }
   .topic.collapsed .extra { display: none; }
   .more { margin: 0 18px 18px; background: none; border: 0; color: var(--c); font: inherit; font-weight: 800; cursor: pointer; padding: 0; text-decoration: underline; }
 
@@ -447,8 +448,13 @@
 
       <div class="topic" style="--c:var(--pink)"><h3>Farming</h3>
         <p class="outcome">You will build a farming plan and start getting leads from your own neighbourhood, past clients and sphere, then follow up so no lead goes cold.</p>
+      </div>
 
-        <h4>Generate leads</h4>
+    </div>
+    <h3 class="sub-title">Inside farming</h3>
+    <div class="grid subgrid">
+
+      <div class="topic sub" style="--c:var(--pink)"><h3>Generate leads</h3>
         <ul>
           <li>Geographical farming &amp; door knocking</li>
           <li>How to run online lead campaigns (Facebook &amp; Google PPC)</li>
@@ -460,8 +466,9 @@
           <li>How to get business from your service providers</li>
           <li>How to work expired listings the legal way</li>
         </ul>
+      </div>
 
-        <h4>Marketing &amp; branding</h4>
+      <div class="topic sub" style="--c:var(--pink)"><h3>Marketing &amp; branding</h3>
         <ul>
           <li>How to build a personal brand and a "brand story" that builds credibility</li>
           <li>What to post each week: content ideas, reels, videos &amp; live</li>
@@ -472,8 +479,9 @@
           <li>Quick marketing ideas you can use this week</li>
           <li>Client events</li>
         </ul>
+      </div>
 
-        <h4>Client care &amp; follow up</h4>
+      <div class="topic sub" style="--c:var(--pink)"><h3>Client care &amp; follow up</h3>
         <ul>
           <li>How to set up your CRM &amp; database so no lead falls through the cracks</li>
           <li>Follow-up systems and what to say to a lead</li>
@@ -483,15 +491,17 @@
           <li>Reactivation &amp; win-back campaigns</li>
           <li>Thank-you tactics</li>
         </ul>
+      </div>
 
-        <h4>Scripts &amp; role-play</h4>
+      <div class="topic sub" style="--c:var(--pink)"><h3>Scripts &amp; role-play</h3>
         <ul>
           <li>Word-for-word phone, text &amp; email scripts</li>
           <li>Live role-play with real objections, until the words feel natural</li>
           <li>How to handle difficult people</li>
         </ul>
+      </div>
 
-        <h4>Business growth</h4>
+      <div class="topic sub" style="--c:var(--pink)"><h3>Business growth</h3>
         <ul>
           <li>How to build a business plan and set income goals</li>
           <li>How to hire &amp; work with a team</li>
@@ -673,6 +683,7 @@
 <script>
   // Collapse long topic cards to the first 6 list items (all visible if JS is off).
   document.querySelectorAll(".topic").forEach(function (t) {
+    if (t.classList.contains("sub")) return;
     var total = t.querySelectorAll("li").length;
     if (total <= 7) return;
     var n = 0;
