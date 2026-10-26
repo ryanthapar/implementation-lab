@@ -174,8 +174,8 @@
   .rah .btn-primary { background: var(--purple); color: #fff; }
 
   #proof .quotes { display: flex; flex-wrap: wrap; justify-content: center; }
-  #proof .quote { flex: 1 1 300px; max-width: calc(33.333% - 14px); }
-  @media (max-width: 960px) { #proof .quote { max-width: none; } }
+  #proof .quote { flex: 0 0 calc(33.333% - 14px); }
+  @media (max-width: 960px) { #proof .quote { flex-basis: 100%; } }
 
   /* testimonials */
   .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -261,6 +261,11 @@
   .piece.hasL .front { -webkit-mask-image: radial-gradient(circle 30px at 0 50%, transparent 29px, #000 30px); mask-image: radial-gradient(circle 30px at 0 50%, transparent 29px, #000 30px); }
   .piece.hasT .front { -webkit-mask-image: radial-gradient(circle 30px at 50% 0, transparent 29px, #000 30px); mask-image: radial-gradient(circle 30px at 50% 0, transparent 29px, #000 30px); }
   .piece.hasL.hasT .front { -webkit-mask-image: radial-gradient(circle 30px at 0 50%, transparent 29px, #000 30px), radial-gradient(circle 30px at 50% 0, transparent 29px, #000 30px); mask-image: radial-gradient(circle 30px at 0 50%, transparent 29px, #000 30px), radial-gradient(circle 30px at 50% 0, transparent 29px, #000 30px); -webkit-mask-composite: source-in; mask-composite: intersect; }
+  .banner-quote { padding-top: 36px; padding-bottom: 8px; }
+  .banner-quote .pull { margin-bottom: 0; }
+  .topic .pull { margin: 4px 18px 18px; max-width: none; }
+  .topic .pull p { font-size: .98rem; }
+  .faq details .pull { margin: 0 0 16px; max-width: none; }
   .piece-hint { text-align: center; color: var(--purple); font-weight: 800; margin: -14px 0 30px; }
   @media (prefers-reduced-motion: reduce) { .piece, .piece .inner { transition: none; } }
   .more { margin: 0 18px 18px; background: none; border: 0; color: var(--c); font: inherit; font-weight: 800; cursor: pointer; padding: 0; text-decoration: underline; }
@@ -324,6 +329,9 @@
 </header>
 
 <div class="banner">Information is not the problem. <span>Implementation is.</span></div>
+<div class="wrap banner-quote">
+  <blockquote class="pull"><p>“Before joining Monica's program, I tried two well-known coaching systems. Although I gained valuable knowledge, my biggest challenge was learning how to translate that knowledge into practical, everyday real estate activities.”</p><footer>Elle Mollaei, RE/MAX Realtron</footer></blockquote>
+</div>
 
 <section id="coach">
   <div class="wrap about">
@@ -335,6 +343,8 @@
       <p>Her journey wasn't handed to her. Monica began her real estate career with $300,000 in personal debt and worked through profound personal adversity: years of IVF, eight miscarriages, and battles with anxiety and depression. That resilience is exactly what she teaches: the mindset shift that keeps agents consistent long enough for the system to start working.</p>
       <p><strong>Let's Farm with Monica Thapar</strong> is her seven-figure coaching company, where she helps REALTORS® across North America build predictable, scalable businesses through geographical farming. Her coaching style is real, raw and authentic. As an active REALTOR® and #1 in her farm for over a decade<sup>†</sup>, Monica doesn't just teach farming, she lives it.</p>
       <p class="callout">In 2022, Monica was personally selected by Premier Doug Ford to sell his Etobicoke home. That's the power of geographical farming.</p>
+      <blockquote class="pull"><p>“Your proof (selling Doug Ford's home) really sold me and made me 100% believe in what you do.”</p><footer>Khoa Le, Real Broker</footer></blockquote>
+      <blockquote class="pull"><p>“Monica is an active agent working in Toronto doing exactly what she preaches, so the results are very evident.”</p><footer>Stephen Sun, RE/MAX Realtron</footer></blockquote>
       <ul class="creds">
         <li>22 years in real estate</li><li>1,000+ students coached<sup>§</sup></li><li>#15 realtor in Toronto, 2026</li><li>RE/MAX Hall of Fame award</li>
       </ul>
@@ -502,6 +512,7 @@
           <li>Presenting your value &amp; holding your fee</li>
         </ul>
         <p class="note">You leave with the plan, not just the notes. Work it one step at a time and your farm is built.</p>
+        <blockquote class="pull"><p>“My business is steady because of farming. I never have to guess if and when I'm going to get business. I know I always will.”</p><footer>Karina Sadu, Royal Lepage Estate Realty</footer></blockquote>
       </div>
 
 
@@ -631,7 +642,7 @@
   <div class="wrap">
     <h2 class="center">Choose how you pay</h2>
     <p class="lead center">Same coaching either way. Register today in either option and get a <strong>bonus session</strong>: your choice of a business plan session or a marketing consultation.</p>
-    <blockquote class="pull"><p>“I probably will be with Monica for the rest of my career.”</p><footer>Michael Lombardi, Right at Home Realty</footer></blockquote>
+    <blockquote class="pull"><p>“Within the three month coaching period I was able to attract one buyer from my farm area who purchased a property with me for $970K, and I made my first highest commission of $24,250, which covered the cost of my course with Monica twofold.”</p><footer>Bash Qamar, Century 21 Peoples Choice, Let's Farm coaching student<sup>§</sup></footer></blockquote>
     <div class="plans">
       <div class="card plan">
         <span class="tag">Monthly</span>
@@ -670,11 +681,15 @@
     <h2 class="center">Results from agents she has coached<sup>§</sup></h2>
     <p class="lead center">Agents from other brokerages who have trained with Monica.</p>
     <div class="quotes">
+      <blockquote class="quote"><p>“I am the #3 agent in my farm. From the end of August to the end of September I had 6 listings in my farm, the most ever within 5 weeks. I get calls around 2-3 times a week from sellers or buyers who want to meet with me in my farm.”</p><footer>Karina Sadu, Royal Lepage Estate Realty<sup>§</sup></footer></blockquote>
+      <blockquote class="quote"><p>“Since completing her course I've been able to sell 6 homes in my farm (over $2M average price) plus 2 purchases.”</p><footer>Stephen Sun, RE/MAX Realtron<sup>§</sup></footer></blockquote>
       <blockquote class="quote"><p>“Monica absolutely has changed my life. I’m a newer realtor, I started her course in year three. She called me she told me exactly what to do from a to z. Full disclosure, I wanted to quit and because of her I did not quit. I almost stopped three meters from gold but she said keep going and that’s how I got that listing and that’s how I’m going to continue to grow.”</p><footer>Anita Quaye, RE/MAX Community Realty Inc.</footer></blockquote>
       <blockquote class="quote"><p>“Before I took Monica’s course, I was struggling. Now I dominate in my farm area. In Rathwood, Mississauga, nobody sells more homes than me. On one street, true story I sold five homes and there is a Realtor living on that street. Just by geographical farming.”</p><footer>Mukhtar Aidarus, #1 in Rathwood, Mississauga, RE/MAX Realty Specialists Inc.</footer></blockquote>
       <blockquote class="quote"><p>“I had the privilege of being a part of Monica’s geographical farming course as well as real estate coaching. Monica’s experience and knowledge has transformed my business and has brought me to new heights. I am a 3 time platinum agent earning over $500,000 in GCI. I cannot thank Monica &amp; Ricardo enough.”</p><footer>Kristine Vavrinec, Mississauga Valley/Lakeview, eXp Realty<sup>§</sup></footer></blockquote>
       <blockquote class="quote"><p>“I made $1 million in the last two years with a huge thanks to your door knocking/farming classes and coaching!”</p><footer>Renee Proulx, High Park, REMAX West<sup>§</sup></footer></blockquote>
       <blockquote class="quote"><p>“I really really enjoyed it. I got a lot out of it. I want to repeat it, best money you can spend. I’ve been in the business 23 years, and successful farming in an area is always where to grow, always where to capitalize and where to expand your business.”</p><footer>David Soberano, #1 Bathurst Manor, RE/MAX Realtron, David Soberano Group</footer></blockquote>
+      <blockquote class="quote"><p>“One thing I improved almost immediately was my marketing. I started getting more calls and more listing appointments from my farm. While a lot of agents are complaining about how bad the market is, I am having one of the best years in my real estate career.”</p><footer>Vlad German, Sutton Group-Admiral Realty</footer></blockquote>
+      <blockquote class="quote"><p>“I now have a geo farm. I do not hesitate to door knock. I have a tag line and marketing material I am proud of.”</p><footer>Carol Evans, Keller Williams Referred Urban Realty</footer></blockquote>
     </div>
   </div>
 </section>
@@ -685,8 +700,10 @@
     <p class="lead center">Not sure yet? Start here.</p>
     <div class="faq">
       <details><summary>Do I have to attend every session?</summary><p>No. Come to the Wednesday Zoom sessions and in-person workshops that suit your schedule. Workshops are included in your membership at no extra cost.</p></details>
-      <details><summary>Is it only for new agents?</summary><p>No. Topics range from getting your first lead to luxury, investors and building a team, so there is something for every stage. Agents at any stage of their career are welcome.</p></details>
-      <details><summary>Is there a contract? Can I cancel?</summary><p>The Implementation Lab is a 12-month commitment. There are no cancellations, whether you pay monthly or in full.</p></details>
+      <details><summary>Is it only for new agents?</summary><p>No. Topics range from getting your first lead to luxury, investors and building a team, so there is something for every stage. Agents at any stage of their career are welcome.</p>
+        <blockquote class="pull"><p>“I would recommend it to new agents to get good habits from the beginning, struggling agents who need to lead gen more and need a proven path and accountability, successful agents who are looking to expand their business, and any agent who is in a mindset slump and needs motivation.”</p><footer>Carol Evans, Keller Williams Referred Urban Realty</footer></blockquote></details>
+      <details><summary>Is there a contract? Can I cancel?</summary><p>The Implementation Lab is a 12-month commitment. There are no cancellations, whether you pay monthly or in full.</p>
+        <blockquote class="pull"><p>“I hesitated to join because it was a twelve month commitment. The cost of a program is peanuts compared to the hundreds of thousands of dollars you can get in return if you apply even a fraction of what Monica teaches you.”</p><footer>Vlad German, Sutton Group-Admiral Realty</footer></blockquote></details>
       <details><summary>What if I miss a session?</summary><p>Every session is recorded, so you can catch up on anything you miss.</p></details>
       <details><summary>What is the bonus session?</summary><p>Register today in either payment option and get one bonus session: your choice of a business plan session or a marketing consultation.</p></details>
       <details><summary>Who can join?</summary><p>The Implementation Lab is for Right at Home agents only, at any stage of their career.</p></details>
