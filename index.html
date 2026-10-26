@@ -270,6 +270,10 @@
   .piece.hasL .front { -webkit-mask-image: radial-gradient(circle 30px at 0 50%, transparent 29px, #000 30px); mask-image: radial-gradient(circle 30px at 0 50%, transparent 29px, #000 30px); }
   .piece.hasT .front { -webkit-mask-image: radial-gradient(circle 30px at 50% 0, transparent 29px, #000 30px); mask-image: radial-gradient(circle 30px at 50% 0, transparent 29px, #000 30px); }
   .piece.hasL.hasT .front { -webkit-mask-image: radial-gradient(circle 30px at 0 50%, transparent 29px, #000 30px), radial-gradient(circle 30px at 50% 0, transparent 29px, #000 30px); mask-image: radial-gradient(circle 30px at 0 50%, transparent 29px, #000 30px), radial-gradient(circle 30px at 50% 0, transparent 29px, #000 30px); -webkit-mask-composite: source-in; mask-composite: intersect; }
+  .trusted { background: var(--card); border-bottom: 1px solid var(--line); padding: 26px 0; text-align: center; }
+  .trusted-label { margin: 0 0 12px; font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .trusted-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 36px; }
+  .trusted-list li { font-size: 1.15rem; font-weight: 800; letter-spacing: -.01em; color: #6a6485; white-space: nowrap; }
   .banner-quote { padding-top: 36px; padding-bottom: 8px; }
   .banner-quote .pull { margin-bottom: 0; }
   .topic .pull { margin: 4px 18px 18px; max-width: none; }
@@ -338,6 +342,14 @@
   </div>
 </header>
 
+<section class="trusted" aria-label="Brokerages Monica has coached">
+  <div class="wrap">
+    <p class="trusted-label">Trusted by agents at</p>
+    <ul class="trusted-list">
+      <li>RE/MAX</li><li>Royal LePage</li><li>Real Broker</li><li>Sutton Group</li><li>Century 21</li><li>Keller Williams</li><li>HomeLife</li>
+    </ul>
+  </div>
+</section>
 <div class="banner">Information is not the problem. <span>Implementation is.</span></div>
 <div class="wrap banner-quote">
   <blockquote class="pull"><p>“Before joining Monica's program, I tried two well-known coaching systems. Although I gained valuable knowledge, my biggest challenge was learning how to translate that knowledge into practical, everyday real estate activities.”</p><footer>Elle Mollaei, RE/MAX Realtron</footer></blockquote>
