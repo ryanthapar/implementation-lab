@@ -90,6 +90,10 @@
     width: 44px; height: 44px; border-radius: 50%; background: var(--purple); color: #fff;
     display: grid; place-items: center; font-weight: 900; margin: 0 auto 12px;
   }
+  .steps.two { grid-template-columns: repeat(2, 1fr); max-width: 860px; margin: 0 auto; }
+  .step { padding: 30px 26px; }
+  .step .pz-icon { display: block; width: 44px; height: 44px; margin: 0 auto 12px; background: var(--purple); -webkit-mask: var(--pz) center/contain no-repeat; mask: var(--pz) center/contain no-repeat; }
+  .hero .sub.accent { color: var(--yellow); font-weight: 800; margin-top: 6px; }
   .step h3 { margin: 0 0 6px; font-size: 1.2rem; }
   .step p { margin: 0; color: var(--muted); font-size: .95rem; }
 
@@ -234,6 +238,7 @@
   .topic.collapsed .extra { display: none; }
 
   /* puzzle pieces */
+  :root { --pz: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z'/%3E%3C/svg%3E"); }
   .grid.pieces { gap: 6px; }
   .piece { position: relative; perspective: 1400px; transition: height .6s ease; }
   .piece .inner { position: relative; height: 100%; transition: transform .6s ease; transform-style: preserve-3d; }
@@ -287,6 +292,7 @@
 
   @media (max-width: 960px) {
     .steps { grid-template-columns: repeat(2, 1fr); }
+    .steps.two { grid-template-columns: 1fr; }
     .grid { grid-template-columns: 1fr; }
     .sched, .reg-box, .quotes, .quotes.two, .plans { grid-template-columns: 1fr; }
     .about { grid-template-columns: 1fr; }
@@ -312,12 +318,12 @@
   <div class="wrap">
     <span class="eyebrow">Real Estate Coaching · One skill at a time</span>
     <h1>Implementation <span>Lab</span></h1>
-    <p class="sub">Real estate is a puzzle. Let's put the pieces together.</p>
-    <p class="sub">Learn from a coach who has put the puzzle together.</p>
+    <p class="sub">Real Estate Is a Jigsaw Puzzle.<br>Let's Put the Pieces Together!</p>
+    <p class="sub accent">Monica's already put the jigsaw puzzle together!</p>
     <p class="by">Real-world training, practical steps, scripts and role-play with Monica Thapar.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#pricing">Register today</a>
-      <a class="btn btn-ghost" href="#topics">See what we cover</a>
+      <a class="btn btn-ghost" href="#coach">See Monica's real estate results</a>
     </div>
     <p class="price-pill"><b>$139/month + HST</b> · two live Zoom sessions every month + in-person workshops · starts Nov 18</p>
     <ul class="facts">
@@ -384,13 +390,11 @@
 
 <section id="how">
   <div class="wrap center">
-    <h2>Everything you need to build a successful real estate business</h2>
-    <p class="lead">You already know what to do. The Lab is where you actually do it, with a coach, a script and a room full of agents to practise with.</p>
-    <div class="steps">
-      <div class="step"><div class="n">1</div><h3>Learn</h3><p>One focused skill at a time, taught in plain language.</p></div>
-      <div class="step"><div class="n">2</div><h3>Practice</h3><p>Scripts and live role-play until the words feel natural.</p></div>
-      <div class="step"><div class="n">3</div><h3>Implement</h3><p>Leave each session with practical steps to put to work that week.</p></div>
-      <div class="step"><div class="n">4</div><h3>Do deals</h3><p>Turn the activity into leads, listings and closings.</p></div>
+    <h2>Learn the pieces. Practise the skills. Put the puzzle together.</h2>
+    <p class="lead">Known for her real, raw and authentic coaching style, Monica Thapar is a Canadian real estate coach still in the trenches who understands today's demographic, commission and market challenges.</p>
+    <div class="steps two">
+      <div class="step"><span class="pz-icon" aria-hidden="true"></span><h3>On Zoom, you'll learn the pieces</h3><p>Each part of real estate is broken down into simple, in-depth lessons, reinforced through repetition and a strong mindset.</p></div>
+      <div class="step"><span class="pz-icon" aria-hidden="true"></span><h3>In person, you'll connect them</h3><p>Four times a year, we come together in person for hands-on workshops where you put what you've learned into practice and connect the pieces.</p></div>
     </div>
   </div>
 </section>
