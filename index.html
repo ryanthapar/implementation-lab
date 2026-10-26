@@ -217,6 +217,7 @@
   .plan { text-align: center; position: relative; display: flex; flex-direction: column; }
   .plan .amt { font-size: clamp(2.4rem, 6vw, 3.2rem); font-weight: 900; color: var(--purple); line-height: 1.1; margin: 8px 0 16px; }
   .plan .amt small { font-size: 1rem; color: var(--muted); font-weight: 700; }
+  .plan .per-month { margin: -8px 0 16px; color: var(--purple); font-weight: 700; }
   .plan .get.one { grid-template-columns: 1fr; text-align: left; margin: 0 0 22px; flex: 1; }
   .plan.best { border: 3px solid var(--yellow); box-shadow: 0 10px 30px rgba(90,31,158,.18); }
   .badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--red); color: #fff; font-weight: 800; font-size: .8rem; padding: 5px 14px; border-radius: 999px; white-space: nowrap; }
@@ -668,6 +669,7 @@
         <span class="tag">Paid in full</span>
         <h3>12 months, paid up front</h3>
         <div class="amt">$1,390<small> + HST</small></div>
+        <p class="per-month">That works out to just <strong style="white-space:nowrap">$115.83/month + HST</strong>, instead of $139.</p>
         <ul class="get one">
           <li>Save $278 vs. monthly ($1,668)</li>
           <li>12-month commitment, no cancellation</li>
