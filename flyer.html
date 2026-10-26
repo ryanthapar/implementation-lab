@@ -20,27 +20,28 @@
   .sub.accent { color: var(--yellow); font-weight: 800; margin-top: 4px; font-size: 13pt; }
   .banner { background: var(--yellow); color: var(--dark); text-align: center; font-weight: 900; font-size: 15pt; padding: 8px; }
   .banner span { color: var(--red); }
-  .body { padding: 12px .45in 0; display: grid; grid-template-columns: 2.35in 1fr; gap: 20px; flex: 1; }
-  .photo { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 38% 25%; border-radius: 14px; display: block; }
-  h2 { font-size: 13pt; margin: 0 0 4px; line-height: 1.15; }
-  .role { color: var(--purple); font-weight: 800; font-size: 9.5pt; margin: 0 0 8px; line-height: 1.3; }
-  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 10px 0; }
-  .stat { background: #f2ecfd; border-radius: 8px; padding: 6px 8px; text-align: center; }
-  .stat b { display: block; color: var(--purple); font-size: 14pt; line-height: 1.1; }
-  .stat span { font-size: 7.5pt; color: var(--muted); line-height: 1.2; display: block; }
-  .callout { font-size: 8pt !important; background: #fff8dc; border-left: 4px solid var(--yellow); padding: 7px 9px; border-radius: 6px; font-weight: 700; font-size: 8.5pt; line-height: 1.35; }
-  .col h3.sec { margin: 0 0 8px; font-size: 14pt; color: var(--dark); }
-  .pieces { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
-  .pc { border-radius: 10px; padding: 9px 10px; color: #fff; font-size: 8.3pt; line-height: 1.3; font-weight: 600; }
-  .pc h4 { margin: 0 0 4px; text-transform: uppercase; letter-spacing: .03em; font-size: 10.5pt; }
+  .body { padding: 10px .45in 0; flex: 1; }
+  .coach { display: grid; grid-template-columns: 1.7fr repeat(4, 1fr); gap: 6px; align-items: stretch; }
+  h2 { font-size: 12.5pt; margin: 0 0 3px; line-height: 1.15; }
+  .role { color: var(--purple); font-weight: 800; font-size: 9pt; margin: 0; line-height: 1.3; }
+  .stat { background: #f2ecfd; border-radius: 8px; padding: 5px 6px; text-align: center; }
+  .stat b { display: block; color: var(--purple); font-size: 13pt; line-height: 1.1; }
+  .stat span { font-size: 7pt; color: var(--muted); line-height: 1.2; display: block; }
+  .callout { background: #fff8dc; border-left: 4px solid var(--yellow); padding: 5px 9px; border-radius: 6px; font-weight: 700; font-size: 8pt; line-height: 1.3; margin: 6px 0 8px; }
+  h3.sec { margin: 0 0 6px; font-size: 12.5pt; color: var(--dark); }
+  .pieces { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin-bottom: 7px; }
+  .pieces.five { grid-template-columns: repeat(5, 1fr); gap: 5px; }
+  .pc { border-radius: 10px; padding: 8px 10px; color: #fff; font-size: 8pt; line-height: 1.28; font-weight: 600; }
+  .pc h4 { margin: 0 0 3px; text-transform: uppercase; letter-spacing: .03em; font-size: 10.5pt; }
   .pc.y { color: var(--dark); }
-  .also { font-size: 9pt; font-weight: 700; color: var(--muted); margin: 0 0 10px; line-height: 1.4; }
-  .also b { color: var(--purple); }
-  .get { list-style: none; margin: 0 0 10px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 3px 14px; font-size: 9pt; font-weight: 600; }
-  .get li { padding-left: 16px; position: relative; }
-  .get li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 900; }
-  .quote { border-left: 4px solid var(--yellow); padding: 2px 0 2px 10px; font-style: italic; font-size: 9pt; line-height: 1.35; margin: 0; }
-  .quote footer { font-style: normal; font-weight: 700; color: var(--muted); font-size: 8pt; margin-top: 3px; }
+  .pc p { margin: 0 0 4px; font-weight: 700; }
+  .pc ul { list-style: none; margin: 0; padding: 0; }
+  .pc li { padding-left: 11px; position: relative; margin-bottom: 1px; }
+  .pc li::before { content: "✓"; position: absolute; left: 0; font-weight: 900; }
+  .pieces.five .pc { padding: 6px 7px; font-size: 7.3pt; }
+  .pieces.five h4 { font-size: 8.5pt; }
+  .quote { border-left: 4px solid var(--yellow); padding: 2px 0 2px 10px; font-style: italic; font-size: 8.5pt; line-height: 1.35; margin: 0; }
+  .quote footer { font-style: normal; font-weight: 700; color: var(--muted); font-size: 7.5pt; margin-top: 2px; }
   .bottom { margin-top: 8px; background: var(--dark); color: #fff; padding: 14px .45in; display: grid; grid-template-columns: 1.15fr 1fr; gap: 20px; align-items: center; }
   .when h3 { margin: 0 0 4px; color: var(--yellow); font-size: 13pt; }
   .when p { margin: 0 0 3px; font-size: 9pt; line-height: 1.35; }
@@ -70,39 +71,35 @@
   <div class="banner">Information is not the problem. <span>Implementation is.</span></div>
 
   <div class="body">
-    <div>
-      <img class="photo" src="monica.jpg" alt="Monica Thapar">
-      <h2 style="margin-top:10px">Your coach, Monica Thapar</h2>
-      <p class="role">One of Canada's most dominant geographical farmers. Still in the trenches.</p>
-      <div class="stats">
-        <div class="stat"><b>#1</b><span>REALTOR® in Etobicoke for over a decade<sup>†</sup></span></div>
-        <div class="stat"><b>$1B+</b><span>career sales volume<sup>‡</sup></span></div>
-        <div class="stat"><b>1,700+</b><span>homes sold<sup>‡</sup></span></div>
-        <div class="stat"><b>Top 0.1%</b><span>of TRREB REALTORS®</span></div>
-      </div>
-      <div class="callout">In 2022, Monica was personally selected by Premier Doug Ford to sell his Etobicoke home. That's the power of geographical farming.</div>
+    <div class="coach">
+      <div class="who"><h2>Your coach, Monica Thapar</h2><p class="role">One of Canada's most dominant geographical farmers. Still in the trenches.</p></div>
+      <div class="stat"><b>#1</b><span>REALTOR® in Etobicoke for over a decade<sup>†</sup></span></div>
+      <div class="stat"><b>$1B+</b><span>career sales volume<sup>‡</sup></span></div>
+      <div class="stat"><b>1,700+</b><span>homes sold<sup>‡</sup></span></div>
+      <div class="stat"><b>Top 0.1%</b><span>of TRREB REALTORS®</span></div>
     </div>
+    <div class="callout">In 2022, Monica was personally selected by Premier Doug Ford to sell his Etobicoke home. That's the power of geographical farming.</div>
 
-    <div class="col">
-      <h3 class="sec">What you will be able to do</h3>
-      <div class="pieces">
-        <div class="pc" style="background:var(--blue)"><h4>Buyers</h4>Close 97% of your buyer appointments, handle 15 common objections word for word, and stop showing homes without a Buyer Representation Agreement.</div>
-        <div class="pc" style="background:var(--green)"><h4>Sellers</h4>Learn the listing presentation Monica used for Premier Doug Ford's listing. Win the listing, hold your 6% commission and get sellers realistic on price.</div>
-        <div class="pc y" style="background:var(--yellow)"><h4>Farming</h4>Walk out with a complete 12-step farming plan: every system, script and calendar, in order, ready to start the very next morning.</div>
-      </div>
-      <p class="also"><b>Plus:</b> generate leads (door knocking, online campaigns, SEO, sphere) · marketing &amp; branding · client care &amp; follow-up · scripts &amp; role-play · business growth &amp; hiring a team.</p>
-
-      <ul class="get">
-        <li>Two live 90-minute Zoom sessions a month, all recorded</li>
-        <li>Word-for-word scripts for calls, texts &amp; emails</li>
-        <li>Live role-play with real objections</li>
-        <li>A practical action step every week</li>
-        <li>A room of agents to practise with</li>
-        <li>4 in-person workshops in Toronto</li>
-      </ul>
-
-      <blockquote class="quote">“Monica being a licensed Realtor and practicing what she teaches… If you're willing to put in the work and just follow her steps, you will see success.”<footer>Nathalie Clark-Singh, Right at Home Realty</footer></blockquote>
+    <h3 class="sec">What we teach: learn the pieces, practise the skills, put the puzzle together</h3>
+    <div class="pieces">
+      <div class="pc" style="background:var(--blue)"><h4>Buyers</h4>
+        <p>Close 97% of buyer appointments and stop showing homes without a Buyer Representation Agreement.</p>
+        <ul><li>Monica's full buyer presentation</li><li>15 objections, with word-for-word responses</li><li>Contracts, OREA forms, financing &amp; title</li><li>First-time, investor, luxury &amp; relocation buyers</li><li>How to run a first-time buyer event</li></ul></div>
+      <div class="pc" style="background:var(--green)"><h4>Sellers</h4>
+        <p>Win the listing with 6% commission, a 6-month term and the right price.</p>
+        <ul><li>The listing presentation used for Premier Doug Ford's home, plus the pre-listing package</li><li>CMAs sellers actually read</li><li>Multiple offers &amp; negotiations</li><li>FSBOs, divorce, estates &amp; distressed sellers</li><li>RECO rules &amp; the Listing Agreement</li></ul></div>
+      <div class="pc y" style="background:var(--yellow)"><h4>Farming</h4>
+        <p>A ready-to-run farming business and a written 12-step plan.</p>
+        <ul><li>Choosing your area, branding &amp; tag line</li><li>Door-knocking scripts &amp; schedule</li><li>Flyers &amp; giveaways calendar</li><li>Tracking systems &amp; lead follow-up</li><li>Open houses as a farmer, and holding your fee</li></ul></div>
     </div>
+    <div class="pieces five">
+      <div class="pc" style="background:#7a2fc0"><h4>Generate leads</h4><ul><li>Facebook &amp; Google ads</li><li>Social media &amp; SEO</li><li>Past client &amp; sphere programs</li><li>Expired listings, the legal way</li></ul></div>
+      <div class="pc y" style="background:#f28c1b"><h4>Marketing &amp; branding</h4><ul><li>Your brand story</li><li>What to post each week</li><li>Newsletters &amp; market reports</li><li>Just Listed / Just Sold mailers</li></ul></div>
+      <div class="pc" style="background:#12958f"><h4>Client care</h4><ul><li>CRM set-up</li><li>Follow-up systems</li><li>Referrals &amp; testimonials</li><li>Win-back campaigns</li></ul></div>
+      <div class="pc" style="background:var(--red)"><h4>Scripts &amp; role-play</h4><ul><li>Phone, text &amp; email scripts</li><li>Live role-play of real objections</li><li>Handling difficult people</li></ul></div>
+      <div class="pc" style="background:#8b5a2b"><h4>Business growth</h4><ul><li>Business plan &amp; income goals</li><li>Hiring &amp; working with a team</li></ul></div>
+    </div>
+    <blockquote class="quote">“Monica being a licensed Realtor and practicing what she teaches… If you're willing to put in the work and just follow her steps, you will see success.”<footer>Nathalie Clark-Singh, Right at Home Realty</footer></blockquote>
   </div>
 
   <div class="bottom">
