@@ -20,7 +20,7 @@
   .sub.accent { color: var(--yellow); font-weight: 800; margin-top: 4px; font-size: 13pt; }
   .banner { background: var(--yellow); color: var(--dark); text-align: center; font-weight: 900; font-size: 15pt; padding: 8px; }
   .banner span { color: var(--red); }
-  .body { padding: 10px .45in 0; flex: 1; }
+  .body { padding: 10px .45in 0; flex: 1; min-height: 0; }
   .coach { display: grid; grid-template-columns: 1.7fr repeat(4, 1fr); gap: 6px; align-items: stretch; }
   h2 { font-size: 12.5pt; margin: 0 0 3px; line-height: 1.15; }
   .role { color: var(--purple); font-weight: 800; font-size: 9pt; margin: 0; line-height: 1.3; }
@@ -50,7 +50,10 @@
   .price .big { font-size: 27pt; font-weight: 900; color: var(--red); line-height: 1; }
   .price .big small { font-size: 10pt; color: var(--dark); }
   .price p { margin: 3px 0 0; font-size: 8.8pt; font-weight: 700; line-height: 1.3; }
-  .cta { background: var(--purple); color: #fff; text-align: center; font-weight: 800; font-size: 11pt; padding: 8px; }
+  .cta { background: var(--purple); color: #fff; font-weight: 800; font-size: 11pt; padding: 5px .45in; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .cta .t { line-height: 1.35; }
+  .cta .scan { display: flex; align-items: center; gap: 8px; text-align: right; font-size: 9.5pt; }
+  .cta .scan img { width: .8in; height: .8in; background: #fff; border-radius: 6px; display: block; }
   .cta span { color: var(--yellow); }
   .fine { font-size: 6.2pt; line-height: 1.35; color: var(--muted); padding: 6px .45in 8px; }
   .fine p { margin: 0 0 2px; }
@@ -115,7 +118,7 @@
       <p style="margin-top:6px">or <b style="font-size:13pt;color:var(--red)">$1,390 + HST</b> paid in full<br>(2 months free, save $278)</p>
     </div>
   </div>
-  <div class="cta">For <span>Right at Home agents only</span> · Register today and get your bonus session</div>
+  <div class="cta"><div class="t">For <span>Right at Home agents only</span><br>Register today and get your bonus session</div><div class="scan"><span>Scan for details<br>and to register</span><img src="qr.png" alt="QR code"></div></div>
   <div class="fine">
     <p><sup>†</sup>Based on 'All Agents Totals Combined For Sold Properties' total listed &amp; sold units in Etobicoke out of 75,496 agents, as reported by independent research company R E Stats Inc. &amp; sourced from TRREB as of May 31, 2025. <sup>‡</sup>Career totals as of June 2026; reflects Monica Thapar's combined representation of both buyers and sellers. Individual results vary.</p>
   </div>
