@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Implementation Lab Flyer</title>
+<style>
+  @page { size: 8.5in 11in; margin: 0; }
+  :root { --ink:#1c1633; --muted:#5b5675; --purple:#5a1f9e; --dark:#2a1060; --yellow:#ffd23f; --red:#e2231a; --blue:#1f6fd6; --green:#1f9d55; --line:#e9e4f5; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; background: #ddd; }
+  .page { width: 8.5in; height: 11in; margin: 0 auto; background: #fff; display: flex; flex-direction: column; overflow: hidden; }
+  .top { background: var(--dark); color: #fff; font-size: 10pt; display: flex; justify-content: space-between; padding: 7px .45in; }
+  .top b { color: var(--yellow); }
+  .hero { background: radial-gradient(circle at 12% 25%, rgba(255,210,63,.35), transparent 40%), radial-gradient(circle at 90% 5%, rgba(232,48,124,.28), transparent 40%), linear-gradient(160deg,#3b1280,#5a1f9e 60%,#8a2be2); color: #fff; text-align: center; padding: 16px .45in 14px; }
+  .eyebrow { display: inline-block; background: var(--yellow); color: var(--dark); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: 9pt; padding: 4px 12px; border-radius: 999px; }
+  h1 { font-size: 46pt; line-height: 1; margin: 10px 0 6px; font-weight: 900; letter-spacing: -.02em; }
+  h1 span { color: var(--yellow); }
+  .sub { font-size: 15pt; font-weight: 700; margin: 0; line-height: 1.25; }
+  .sub.accent { color: var(--yellow); font-weight: 800; margin-top: 4px; font-size: 13pt; }
+  .banner { background: var(--yellow); color: var(--dark); text-align: center; font-weight: 900; font-size: 15pt; padding: 8px; }
+  .banner span { color: var(--red); }
+  .body { padding: 12px .45in 0; display: grid; grid-template-columns: 2.35in 1fr; gap: 20px; flex: 1; }
+  .photo { width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 38% 25%; border-radius: 14px; display: block; }
+  h2 { font-size: 13pt; margin: 0 0 4px; line-height: 1.15; }
+  .role { color: var(--purple); font-weight: 800; font-size: 9.5pt; margin: 0 0 8px; line-height: 1.3; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 10px 0; }
+  .stat { background: #f2ecfd; border-radius: 8px; padding: 6px 8px; text-align: center; }
+  .stat b { display: block; color: var(--purple); font-size: 14pt; line-height: 1.1; }
+  .stat span { font-size: 7.5pt; color: var(--muted); line-height: 1.2; display: block; }
+  .callout { font-size: 8pt !important; background: #fff8dc; border-left: 4px solid var(--yellow); padding: 7px 9px; border-radius: 6px; font-weight: 700; font-size: 8.5pt; line-height: 1.35; }
+  .col h3.sec { margin: 0 0 8px; font-size: 14pt; color: var(--dark); }
+  .pieces { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  .pc { border-radius: 10px; padding: 9px 10px; color: #fff; font-size: 8.3pt; line-height: 1.3; font-weight: 600; }
+  .pc h4 { margin: 0 0 4px; text-transform: uppercase; letter-spacing: .03em; font-size: 10.5pt; }
+  .pc.y { color: var(--dark); }
+  .also { font-size: 9pt; font-weight: 700; color: var(--muted); margin: 0 0 10px; line-height: 1.4; }
+  .also b { color: var(--purple); }
+  .get { list-style: none; margin: 0 0 10px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 3px 14px; font-size: 9pt; font-weight: 600; }
+  .get li { padding-left: 16px; position: relative; }
+  .get li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 900; }
+  .quote { border-left: 4px solid var(--yellow); padding: 2px 0 2px 10px; font-style: italic; font-size: 9pt; line-height: 1.35; margin: 0; }
+  .quote footer { font-style: normal; font-weight: 700; color: var(--muted); font-size: 8pt; margin-top: 3px; }
+  .bottom { margin-top: 8px; background: var(--dark); color: #fff; padding: 14px .45in; display: grid; grid-template-columns: 1.15fr 1fr; gap: 20px; align-items: center; }
+  .when h3 { margin: 0 0 4px; color: var(--yellow); font-size: 13pt; }
+  .when p { margin: 0 0 3px; font-size: 9pt; line-height: 1.35; }
+  .when b { color: var(--yellow); }
+  .price { background: linear-gradient(160deg,#ffe066,var(--yellow)); color: var(--dark); border-radius: 12px; padding: 10px 14px; text-align: center; }
+  .price .big { font-size: 27pt; font-weight: 900; color: var(--red); line-height: 1; }
+  .price .big small { font-size: 10pt; color: var(--dark); }
+  .price p { margin: 3px 0 0; font-size: 8.8pt; font-weight: 700; line-height: 1.3; }
+  .cta { background: var(--purple); color: #fff; text-align: center; font-weight: 800; font-size: 11pt; padding: 8px; }
+  .cta span { color: var(--yellow); }
+  .fine { font-size: 6.2pt; line-height: 1.35; color: var(--muted); padding: 6px .45in 8px; }
+  .fine p { margin: 0 0 2px; }
+  @media screen { .page { margin: 20px auto; box-shadow: 0 6px 30px rgba(0,0,0,.25); } }
+  @media print { body { background: none; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top"><span>A <b>Right at Home Realty</b> special</span><span>Let's Farm with Monica Thapar</span></div>
+
+  <div class="hero">
+    <span class="eyebrow">Real Estate Coaching · One skill at a time</span>
+    <h1>Implementation <span>Lab</span></h1>
+    <p class="sub">Real Estate Is a Jigsaw Puzzle. Let's Put the Pieces Together!</p>
+    <p class="sub accent">Monica's already put the jigsaw puzzle together!</p>
+  </div>
+  <div class="banner">Information is not the problem. <span>Implementation is.</span></div>
+
+  <div class="body">
+    <div>
+      <img class="photo" src="monica.jpg" alt="Monica Thapar">
+      <h2 style="margin-top:10px">Your coach, Monica Thapar</h2>
+      <p class="role">One of Canada's most dominant geographical farmers. Still in the trenches.</p>
+      <div class="stats">
+        <div class="stat"><b>#1</b><span>REALTOR® in Etobicoke for over a decade<sup>†</sup></span></div>
+        <div class="stat"><b>$1B+</b><span>career sales volume<sup>‡</sup></span></div>
+        <div class="stat"><b>1,700+</b><span>homes sold<sup>‡</sup></span></div>
+        <div class="stat"><b>Top 0.1%</b><span>of TRREB REALTORS®</span></div>
+      </div>
+      <div class="callout">In 2022, Monica was personally selected by Premier Doug Ford to sell his Etobicoke home. That's the power of geographical farming.</div>
+    </div>
+
+    <div class="col">
+      <h3 class="sec">What you will be able to do</h3>
+      <div class="pieces">
+        <div class="pc" style="background:var(--blue)"><h4>Buyers</h4>Close 97% of your buyer appointments, handle 15 common objections word for word, and stop showing homes without a Buyer Representation Agreement.</div>
+        <div class="pc" style="background:var(--green)"><h4>Sellers</h4>Learn the listing presentation Monica used for Premier Doug Ford's listing. Win the listing, hold your 6% commission and get sellers realistic on price.</div>
+        <div class="pc y" style="background:var(--yellow)"><h4>Farming</h4>Walk out with a complete 12-step farming plan: every system, script and calendar, in order, ready to start the very next morning.</div>
+      </div>
+      <p class="also"><b>Plus:</b> generate leads (door knocking, online campaigns, SEO, sphere) · marketing &amp; branding · client care &amp; follow-up · scripts &amp; role-play · business growth &amp; hiring a team.</p>
+
+      <ul class="get">
+        <li>Two live 90-minute Zoom sessions a month, all recorded</li>
+        <li>Word-for-word scripts for calls, texts &amp; emails</li>
+        <li>Live role-play with real objections</li>
+        <li>A practical action step every week</li>
+        <li>A room of agents to practise with</li>
+        <li>4 in-person workshops in Toronto</li>
+      </ul>
+
+      <blockquote class="quote">“Monica being a licensed Realtor and practicing what she teaches… If you're willing to put in the work and just follow her steps, you will see success.”<footer>Nathalie Clark-Singh, Right at Home Realty</footer></blockquote>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="when">
+      <h3>Starts Wednesday, November 18, 2026</h3>
+      <p><b>Zoom:</b> twice a month on Wednesdays, 12:00 PM (noon) to 1:30 PM ET</p>
+      <p><b>In person, Toronto (12:00 PM):</b> Feb 24, May 19, Sep 15 &amp; Dec 8, 2027</p>
+      <p><b>Bonus session</b> when you register today: a business plan session or a marketing consultation.</p>
+    </div>
+    <div class="price">
+      <div class="big">$139<small> + HST / month</small></div>
+      <p>12-month commitment, first and last month up front</p>
+      <p style="margin-top:6px">or <b style="font-size:13pt;color:var(--red)">$1,390 + HST</b> paid in full<br>(2 months free, save $278)</p>
+    </div>
+  </div>
+  <div class="cta">For <span>Right at Home agents only</span> · Register today and get your bonus session</div>
+  <div class="fine">
+    <p><sup>†</sup>Based on 'All Agents Totals Combined For Sold Properties' total listed &amp; sold units in Etobicoke out of 75,496 agents, as reported by independent research company R E Stats Inc. &amp; sourced from TRREB as of May 31, 2025. <sup>‡</sup>Career totals as of June 2026; reflects Monica Thapar's combined representation of both buyers and sellers. Individual results vary.</p>
+  </div>
+</div>
+</body>
+</html>
