@@ -95,6 +95,10 @@
   .steps.two { grid-template-columns: repeat(2, 1fr); max-width: 860px; margin: 0 auto; }
   .step { padding: 30px 26px; }
   .step .pz-icon { display: block; width: 44px; height: 44px; margin: 0 auto 12px; background: var(--purple); -webkit-mask: var(--pz) center/contain no-repeat; mask: var(--pz) center/contain no-repeat; }
+  .start-badge { display: inline-flex; align-items: center; gap: 14px; margin: 4px 0 26px; padding: 12px 28px; background: var(--yellow); color: var(--purple-dark); border-radius: 18px; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+  .start-badge span { font-size: .85rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; background: var(--purple-dark); color: var(--yellow); }
+  .start-badge b { font-size: clamp(1.4rem, 4.2vw, 2.1rem); font-weight: 900; line-height: 1.1; }
+  @media (max-width: 520px) { .start-badge { flex-direction: column; gap: 6px; padding: 12px 20px; } }
   .hero .sub.accent { color: var(--yellow); font-weight: 800; margin-top: 6px; }
   .step h3 { margin: 0 0 6px; font-size: 1.2rem; }
   .step p { margin: 0; color: var(--muted); font-size: .95rem; }
@@ -365,11 +369,12 @@
     <p class="sub">Real Estate Is a Jigsaw Puzzle.<br>Let's Put the Pieces Together!</p>
     <p class="sub accent">Monica's already put the jigsaw puzzle together!</p>
     <p class="by">Real-world training, practical steps, scripts and live role-play with Monica Thapar.</p>
+    <div class="start-badge"><span>Starts</span><b>Wednesday, November 18</b></div>
     <div class="cta-row">
       <a class="btn btn-primary" href="#pricing">Register today</a>
       <a class="btn btn-ghost" href="#coach">See Monica's real estate results</a>
     </div>
-    <p class="price-pill"><b>$139/month + HST</b> · two live Zoom sessions every month + in-person workshops · starts Nov 18</p>
+    <p class="price-pill"><b>$139/month + HST</b> · two live Zoom sessions every month + in-person workshops</p>
     <ul class="facts">
       <li>Live on Zoom, Wednesdays, 90 minutes</li>
       <li>Register today and get a bonus session</li>
