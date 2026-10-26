@@ -198,6 +198,9 @@
   .month li.ws { background: var(--yellow); color: var(--purple-dark); }
   .month li.ws span { color: var(--purple-dark); font-weight: 800; }
 
+  .reg-box.one { grid-template-columns: 1fr; max-width: 760px; text-align: center; }
+  .reg-box.one .pay-row { justify-content: center; }
+  .reg-box.one .checks { display: inline-block; text-align: left; }
   .pay-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 0 0 22px; }
   .form-title { margin: 0 0 14px; font-size: 1.15rem; }
   .plan .btn { text-align: center; }
@@ -659,10 +662,10 @@
 </section>
 
 <section id="register" class="register">
-  <div class="wrap reg-box">
+  <div class="wrap reg-box one">
     <div>
       <h2>Register today</h2>
-      <p class="lead">Pick a payment option to register on our secure Square checkout. Then tell us which bonus session you want.</p>
+      <p class="lead">Pick a payment option to register on our secure Square checkout.</p>
       <blockquote class="pull on-dark"><p>“If you're willing to put in the work and just follow her steps, you will see success.”</p><footer>Nathalie Clark-Singh, Right at Home Realty</footer></blockquote>
       <div class="pay-row">
         <a class="btn btn-primary" href="https://square.link/u/lSktTXJM" target="_blank" rel="noopener">Monthly: $139 + HST</a>
@@ -673,18 +676,6 @@
         <li>For Right at Home agents only</li>
       </ul>
     </div>
-    <form id="form" novalidate>
-      <h3 class="form-title">Choose your bonus session</h3>
-      <label>Full name<input name="name" type="text" autocomplete="name" required></label>
-      <label>Email<input name="email" type="email" autocomplete="email" required></label>
-      <label>Payment option you chose
-        <select name="plan"><option>Monthly: $139 + HST x 12</option><option>Paid in full: $1,390 + HST</option></select></label>
-      <label>Bonus session
-        <select name="bonus"><option>Business plan session</option><option>Marketing consultation</option></select></label>
-      <button class="btn" type="submit">Send my bonus choice</button>
-      <p class="fine">Registering today gets you one bonus session. For Right at Home agents only.</p>
-      <p id="thanks"></p>
-    </form>
   </div>
 </section>
 
@@ -726,23 +717,6 @@
     t.appendChild(b);
   });
 
-  var REGISTER_EMAIL = "ryan@thaparteam.ca";
-  document.getElementById("form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    var f = e.target, name = f.name.value.trim(), email = f.email.value.trim();
-    var thanks = document.getElementById("thanks");
-    if (!name || !/^\S+@\S+\.\S+$/.test(email)) {
-      thanks.style.display = "block";
-      thanks.textContent = "Please enter your name and a valid email.";
-      return;
-    }
-    var body = "Name: " + name + "\nEmail: " + email  + "\nPlan: " + f.plan.value + "\nBonus: " + f.bonus.value;
-    window.location.href = "mailto:" + REGISTER_EMAIL +
-      "?subject=" + encodeURIComponent("Implementation Lab: bonus session choice") +
-      "&body=" + encodeURIComponent(body);
-    thanks.style.display = "block";
-    thanks.textContent = "Thanks! Send the email that just opened to lock in your bonus session.";
-  });
 </script>
 </body>
 </html>
