@@ -94,6 +94,8 @@
   }
   .steps.two { grid-template-columns: repeat(2, 1fr); max-width: 860px; margin: 0 auto; }
   .step { padding: 30px 26px; }
+  .pz-row { display: flex; justify-content: center; gap: 6px; margin: 0 auto 12px; }
+  .step .pz-row .pz-icon { margin: 0; }
   .step .pz-icon { display: block; width: 44px; height: 44px; margin: 0 auto 12px; background: var(--purple); -webkit-mask: var(--pz) center/contain no-repeat; mask: var(--pz) center/contain no-repeat; }
   .start-badge { display: inline-flex; align-items: center; gap: 14px; margin: 4px 0 26px; padding: 12px 28px; background: var(--yellow); color: var(--purple-dark); border-radius: 18px; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
   .start-badge span { font-size: .85rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; background: var(--purple-dark); color: var(--yellow); }
@@ -456,8 +458,8 @@
     <h2>Learn the pieces. Practise the skills. Put the puzzle together.</h2>
     <p class="lead">Known for her real, raw and authentic coaching style, Monica Thapar is a Canadian real estate coach still in the trenches who understands today's demographic, commission and market challenges.</p>
     <div class="steps two">
-      <div class="step"><span class="pz-icon" aria-hidden="true"></span><h3>On Zoom, you'll learn the pieces</h3><p>Each part of real estate is broken down into simple, in-depth lessons, reinforced through repetition and a strong mindset.</p></div>
-      <div class="step"><span class="pz-icon" aria-hidden="true"></span><h3>In person, you'll connect them</h3><p>Four times a year, we come together in person for hands-on workshops where you put what you've learned into practice and connect the pieces.</p></div>
+      <div class="step"><span class="pz-row" role="img" aria-label="2 puzzle pieces"><span class="pz-icon" aria-hidden="true"></span><span class="pz-icon" aria-hidden="true"></span></span><h3>On Zoom, you'll learn the pieces</h3><p>Each part of real estate is broken down into simple, in-depth lessons, reinforced through repetition and a strong mindset.</p></div>
+      <div class="step"><span class="pz-row" role="img" aria-label="4 puzzle pieces"><span class="pz-icon" aria-hidden="true"></span><span class="pz-icon" aria-hidden="true"></span><span class="pz-icon" aria-hidden="true"></span><span class="pz-icon" aria-hidden="true"></span></span><h3>In person, you'll connect them</h3><p>Four times a year, we come together in person for hands-on workshops where you put what you've learned into practice and connect the pieces.</p></div>
     </div>
   </div>
 </section>
